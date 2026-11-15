@@ -1,4 +1,5 @@
 import { writeFileSync } from "node:fs";
+import { members } from "./members-data.mjs";
 
 const regions = ["Raja Ampat", "Komodo", "Bali", "Sulawesi", "Banda Sea", "Jabodetabek", "Other regions"];
 const types = ["Liveaboard", "Dive resort or center", "Day-trip operator", "Travel specialist"];
@@ -49,138 +50,6 @@ function numbered(items, prefix) {
 		children: [{ _type: "span", _key: `${prefix}-${index}-s`, text }],
 	}));
 }
-
-const members = [
-	{
-		slug: "nakula-dive",
-		name: "Nakula Dive",
-		regions: ["Bali", "Komodo"],
-		type: "Liveaboard",
-		featured: true,
-		image: "photo-1559827260-dc66d52bef19",
-		alt: { en: "Shallow reef in clear water", id: "Terumbu dangkal di air jernih" },
-		summary: {
-			en: "Nakula Dive stands in for a professional operator working between Bali and Komodo, with liveaboard passages and day diving from Labuan Bajo. The page is here to show how a member description, region, and services will read.",
-			id: "Nakula Dive mewakili operator profesional yang bekerja antara Bali dan Komodo, dengan lintasan liveaboard dan selam harian dari Labuan Bajo. Halaman ini menunjukkan bagaimana deskripsi, wilayah, dan layanan anggota akan terbaca.",
-		},
-		services: {
-			en: "Guided dives, liveaboard charters, and support for underwater photography.",
-			id: "Selam terpandu, charter liveaboard, dan dukungan fotografi bawah air.",
-		},
-	},
-	{
-		slug: "dewi-nusantara",
-		name: "Dewi Nusantara",
-		regions: ["Raja Ampat", "Komodo", "Banda Sea"],
-		type: "Liveaboard",
-		image: "photo-1544551763-46a013bb70d5",
-		alt: { en: "Diver swimming above a reef", id: "Penyelam di atas terumbu" },
-		summary: {
-			en: "Dewi Nusantara stands in for a luxury liveaboard crossing Raja Ampat, Komodo, and the Banda Sea. Guests live aboard and move between sites rather than returning to a resort each evening.",
-			id: "Dewi Nusantara mewakili liveaboard mewah yang melintasi Raja Ampat, Komodo, dan Laut Banda. Tamu tinggal di kapal dan berpindah antar situs, bukan kembali ke resort setiap sore.",
-		},
-		services: {
-			en: "Multi-region luxury liveaboard itineraries.",
-			id: "Itinerari liveaboard mewah lintas wilayah.",
-		},
-	},
-	{
-		slug: "scubaspa-zen",
-		name: "Scubaspa Zen",
-		regions: ["Raja Ampat"],
-		type: "Liveaboard",
-		image: "photo-1682687220742-aba13b6e50ba",
-		alt: { en: "Deep blue water over a reef slope", id: "Air biru di lereng terumbu" },
-		summary: {
-			en: "Scubaspa Zen stands in for a wellness liveaboard based in Raja Ampat, where the trip pairs diving with a quieter onboard routine.",
-			id: "Scubaspa Zen mewakili liveaboard kebugaran yang berbasis di Raja Ampat, dengan perjalanan yang memasangkan selam dan ritme di atas kapal yang lebih tenang.",
-		},
-		services: {
-			en: "Raja Ampat liveaboard with a wellness program on board.",
-			id: "Liveaboard Raja Ampat dengan program kebugaran di atas kapal.",
-		},
-	},
-	{
-		slug: "mikumba-diving",
-		name: "Mikumba Diving",
-		regions: ["Komodo", "Raja Ampat"],
-		type: "Liveaboard",
-		image: "photo-1546026423-cc4642628d2b",
-		alt: { en: "Coral heads in clear water", id: "Kepala karang di air jernih" },
-		summary: {
-			en: "Mikumba Diving stands in for a liveaboard operator moving between Komodo and Raja Ampat.",
-			id: "Mikumba Diving mewakili operator liveaboard yang berpindah antara Komodo dan Raja Ampat.",
-		},
-		services: {
-			en: "Liveaboard diving in Komodo and Raja Ampat.",
-			id: "Selam liveaboard di Komodo dan Raja Ampat.",
-		},
-	},
-	{
-		slug: "indo-seamore",
-		name: "Indo Seamore",
-		regions: ["Other regions"],
-		type: "Liveaboard",
-		image: "photo-1507525428034-b723cf961d3e",
-		alt: { en: "Coastal water seen from shore", id: "Perairan pantai dilihat dari darat" },
-		summary: {
-			en: "Indo Seamore stands in for a phinisi liveaboard working the waters of eastern Indonesia, outside a single famous park.",
-			id: "Indo Seamore mewakili liveaboard phinisi yang beroperasi di perairan Indonesia timur, di luar satu taman yang sudah terkenal.",
-		},
-		services: {
-			en: "Phinisi liveaboard charters in eastern Indonesia.",
-			id: "Charter liveaboard phinisi di Indonesia timur.",
-		},
-	},
-	{
-		slug: "cruising-indonesia",
-		name: "Cruising Indonesia",
-		regions: ["Raja Ampat", "Komodo", "Banda Sea", "Bali"],
-		type: "Travel specialist",
-		image: "photo-1468581264429-2548ef9eb732",
-		alt: { en: "Sunlight on the sea surface", id: "Cahaya matahari di permukaan laut" },
-		summary: {
-			en: "Cruising Indonesia stands in for a specialist that arranges liveaboard itineraries across more than one region, rather than running a single boat from one jetty.",
-			id: "Cruising Indonesia mewakili spesialis yang menyusun itinerari liveaboard di lebih dari satu wilayah, bukan mengoperasikan satu kapal dari satu dermaga.",
-		},
-		services: {
-			en: "Liveaboard planning across several Indonesian regions.",
-			id: "Perencanaan liveaboard di beberapa wilayah Indonesia.",
-		},
-	},
-	{
-		slug: "arenui",
-		name: "Arenui",
-		regions: ["Raja Ampat"],
-		type: "Liveaboard",
-		image: "photo-1551244072-5d12893278ab",
-		alt: { en: "Sea turtle over coral", id: "Penyu di atas karang" },
-		summary: {
-			en: "Arenui stands in for a boutique liveaboard in Raja Ampat, with a smaller guest list and a longer time on the reef.",
-			id: "Arenui mewakili liveaboard butik di Raja Ampat, dengan jumlah tamu yang lebih kecil dan waktu yang lebih panjang di terumbu.",
-		},
-		services: {
-			en: "Boutique liveaboard diving in Raja Ampat.",
-			id: "Selam liveaboard butik di Raja Ampat.",
-		},
-	},
-	{
-		slug: "your-company",
-		name: "Your Company",
-		regions: ["Bali"],
-		type: "Dive resort or center",
-		image: "photo-1505118380757-91f5f5632de0",
-		alt: { en: "Open sea under a bright sky", id: "Laut lepas di bawah langit cerah" },
-		summary: {
-			en: "Your Company is the open slot in the directory: a dive center or resort listing, ready for a member to replace with its own name, region, and photographs.",
-			id: "Your Company adalah tempat kosong di direktori: cantuman pusat selam atau resort, siap diganti anggota dengan nama, wilayah, dan fotonya sendiri.",
-		},
-		services: {
-			en: "Resort or dive-center operation. The details come from the member.",
-			id: "Operasi resort atau pusat selam. Rinciannya berasal dari anggota.",
-		},
-	},
-];
 
 const letter = {
 	en: [
@@ -332,6 +201,9 @@ function memberEntries(member) {
 		regions: member.regions,
 		operation_type: member.type,
 		featured: Boolean(member.featured),
+		...(member.website ? { website: member.website } : {}),
+		...(member.email ? { email: member.email } : {}),
+		...(member.whatsapp ? { whatsapp: member.whatsapp } : {}),
 	};
 	return ["en", "id"].map((locale) => ({
 		id: `member-${member.slug}-${locale}`,
@@ -344,7 +216,17 @@ function memberEntries(member) {
 			summary: member.summary[locale],
 			services: member.services[locale],
 			...shared,
-			featured_image: photo(member.image, member.alt[locale]),
+			...(member.logo
+				? {
+						featured_image: {
+							$media: {
+								file: `media/logos/${member.logo}`,
+								alt: member.name,
+								filename: member.logo,
+							},
+						},
+					}
+				: {}),
 		},
 	}));
 }
@@ -373,7 +255,7 @@ const seed = {
 	defaultLocale: "en",
 	meta: {
 		name: "IDCA",
-		description: "Indonesia Divetourism Company Association. Seeded operators and articles are placeholders for the secretariat to replace.",
+		description: "Indonesia Divetourism Company Association. Member listings follow the secretariat directory.",
 		author: "IDCA",
 	},
 	settings: {
@@ -387,7 +269,7 @@ const seed = {
 			slug: "members",
 			label: "Members",
 			labelSingular: "Member",
-			description: "Directory listings. The seeded operators are placeholders — replace them with confirmed member companies.",
+			description: "Directory listings for IDCA member companies.",
 			urlPattern: "/members/{slug}",
 			titleField: "title",
 			supports: ["drafts", "revisions", "preview", "search", "seo"],

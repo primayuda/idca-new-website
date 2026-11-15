@@ -4,7 +4,7 @@
 	"defaultLocale": "en",
 	"meta": {
 		"name": "IDCA",
-		"description": "Indonesia Divetourism Company Association. Seeded operators and articles are placeholders for the secretariat to replace.",
+		"description": "Indonesia Divetourism Company Association. Member listings follow the secretariat directory.",
 		"author": "IDCA"
 	},
 	"settings": {
@@ -18,7 +18,7 @@
 			"slug": "members",
 			"label": "Members",
 			"labelSingular": "Member",
-			"description": "Directory listings. The seeded operators are placeholders — replace them with confirmed member companies.",
+			"description": "Directory listings for IDCA member companies.",
 			"urlPattern": "/members/{slug}",
 			"titleField": "title",
 			"supports": [
@@ -178,63 +178,176 @@
 	"content": {
 		"members": [
 			{
-				"id": "member-nakula-dive-en",
-				"slug": "nakula-dive",
+				"id": "member-alexa-scuba-en",
+				"slug": "alexa-scuba",
 				"status": "published",
 				"locale": "en",
 				"data": {
-					"title": "Nakula Dive",
-					"summary": "Nakula Dive stands in for a professional operator working between Bali and Komodo, with liveaboard passages and day diving from Labuan Bajo. The page is here to show how a member description, region, and services will read.",
-					"services": "Guided dives, liveaboard charters, and support for underwater photography.",
+					"title": "Alexa Scuba",
+					"summary": "Dive center in Kendari, Southeast Sulawesi, also running trips in the region.",
+					"services": "Dive center.",
 					"regions": [
-						"Bali",
-						"Komodo"
+						"Sulawesi"
 					],
-					"operation_type": "Liveaboard",
-					"featured": true,
-					"featured_image": {
-						"$media": {
-							"file": "media/photo-1559827260-dc66d52bef19.jpg",
-							"alt": "Shallow reef in clear water",
-							"filename": "photo-1559827260-dc66d52bef19.jpg"
-						}
-					}
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "alexascuba@gmail.com",
+					"whatsapp": "+62811405407"
 				}
 			},
 			{
-				"id": "member-nakula-dive-id",
-				"slug": "nakula-dive",
+				"id": "member-alexa-scuba-id",
+				"slug": "alexa-scuba",
 				"status": "published",
 				"locale": "id",
-				"translationOf": "member-nakula-dive-en",
+				"translationOf": "member-alexa-scuba-en",
 				"data": {
-					"title": "Nakula Dive",
-					"summary": "Nakula Dive mewakili operator profesional yang bekerja antara Bali dan Komodo, dengan lintasan liveaboard dan selam harian dari Labuan Bajo. Halaman ini menunjukkan bagaimana deskripsi, wilayah, dan layanan anggota akan terbaca.",
-					"services": "Selam terpandu, charter liveaboard, dan dukungan fotografi bawah air.",
+					"title": "Alexa Scuba",
+					"summary": "Pusat selam di Kendari, Sulawesi Tenggara, yang juga menjalankan perjalanan selam di wilayah itu.",
+					"services": "Pusat selam.",
 					"regions": [
-						"Bali",
-						"Komodo"
+						"Sulawesi"
 					],
-					"operation_type": "Liveaboard",
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "alexascuba@gmail.com",
+					"whatsapp": "+62811405407"
+				}
+			},
+			{
+				"id": "member-anak-selam-en",
+				"slug": "anak-selam",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Anak Selam",
+					"summary": "SSI dive center in Ciputat, South Tangerang, also connected with diving at Pulau Pramuka.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "karyaanakselam@gmail.com",
+					"whatsapp": "+62811816044"
+				}
+			},
+			{
+				"id": "member-anak-selam-id",
+				"slug": "anak-selam",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-anak-selam-en",
+				"data": {
+					"title": "Anak Selam",
+					"summary": "Pusat selam SSI di Ciputat, Tangerang Selatan, yang juga terhubung dengan selam di Pulau Pramuka.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "karyaanakselam@gmail.com",
+					"whatsapp": "+62811816044"
+				}
+			},
+			{
+				"id": "member-arborek-diveshop-en",
+				"slug": "arborek-diveshop",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Arborek diveshop",
+					"summary": "Dive shop on Arborek Island, Raja Ampat.",
+					"services": "Dive center.",
+					"regions": [
+						"Raja Ampat"
+					],
+					"operation_type": "Dive resort or center",
 					"featured": true,
+					"website": "https://www.arborekdiveshop.com/",
 					"featured_image": {
 						"$media": {
-							"file": "media/photo-1559827260-dc66d52bef19.jpg",
-							"alt": "Terumbu dangkal di air jernih",
-							"filename": "photo-1559827260-dc66d52bef19.jpg"
+							"file": "media/logos/arborek-diveshop.jpg",
+							"alt": "Arborek diveshop",
+							"filename": "arborek-diveshop.jpg"
 						}
 					}
 				}
 			},
 			{
-				"id": "member-dewi-nusantara-en",
-				"slug": "dewi-nusantara",
+				"id": "member-arborek-diveshop-id",
+				"slug": "arborek-diveshop",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-arborek-diveshop-en",
+				"data": {
+					"title": "Arborek diveshop",
+					"summary": "Pusat selam di Pulau Arborek, Raja Ampat.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Raja Ampat"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": true,
+					"website": "https://www.arborekdiveshop.com/",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/arborek-diveshop.jpg",
+							"alt": "Arborek diveshop",
+							"filename": "arborek-diveshop.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-bali-ocean-reef-diver-en",
+				"slug": "bali-ocean-reef-diver",
 				"status": "published",
 				"locale": "en",
 				"data": {
-					"title": "Dewi Nusantara",
-					"summary": "Dewi Nusantara stands in for a luxury liveaboard crossing Raja Ampat, Komodo, and the Banda Sea. Guests live aboard and move between sites rather than returning to a resort each evening.",
-					"services": "Multi-region luxury liveaboard itineraries.",
+					"title": "Bali Ocean Reef Diver",
+					"summary": "PADI dive center in Pemuteran, Bali.",
+					"services": "Dive center.",
+					"regions": [
+						"Bali"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://balioceanreef.com/",
+					"email": "balioceanreefdiver@gmail.com",
+					"whatsapp": "+62818829275"
+				}
+			},
+			{
+				"id": "member-bali-ocean-reef-diver-id",
+				"slug": "bali-ocean-reef-diver",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-bali-ocean-reef-diver-en",
+				"data": {
+					"title": "Bali Ocean Reef Diver",
+					"summary": "Pusat selam PADI di Pemuteran, Bali.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Bali"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://balioceanreef.com/",
+					"email": "balioceanreefdiver@gmail.com",
+					"whatsapp": "+62818829275"
+				}
+			},
+			{
+				"id": "member-benetta-liveaboard-en",
+				"slug": "benetta-liveaboard",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Benetta Liveaboard",
+					"summary": "Liveaboard sailing routes that include Raja Ampat, Komodo, Alor, and the Banda Sea.",
+					"services": "Liveaboard diving.",
 					"regions": [
 						"Raja Ampat",
 						"Komodo",
@@ -242,25 +355,26 @@
 					],
 					"operation_type": "Liveaboard",
 					"featured": false,
+					"website": "https://benettaliveaboard.com/",
 					"featured_image": {
 						"$media": {
-							"file": "media/photo-1544551763-46a013bb70d5.jpg",
-							"alt": "Diver swimming above a reef",
-							"filename": "photo-1544551763-46a013bb70d5.jpg"
+							"file": "media/logos/benetta-liveaboard.png",
+							"alt": "Benetta Liveaboard",
+							"filename": "benetta-liveaboard.png"
 						}
 					}
 				}
 			},
 			{
-				"id": "member-dewi-nusantara-id",
-				"slug": "dewi-nusantara",
+				"id": "member-benetta-liveaboard-id",
+				"slug": "benetta-liveaboard",
 				"status": "published",
 				"locale": "id",
-				"translationOf": "member-dewi-nusantara-en",
+				"translationOf": "member-benetta-liveaboard-en",
 				"data": {
-					"title": "Dewi Nusantara",
-					"summary": "Dewi Nusantara mewakili liveaboard mewah yang melintasi Raja Ampat, Komodo, dan Laut Banda. Tamu tinggal di kapal dan berpindah antar situs, bukan kembali ke resort setiap sore.",
-					"services": "Itinerari liveaboard mewah lintas wilayah.",
+					"title": "Benetta Liveaboard",
+					"summary": "Liveaboard dengan rute yang mencakup Raja Ampat, Komodo, Alor, dan Laut Banda.",
+					"services": "Selam liveaboard.",
 					"regions": [
 						"Raja Ampat",
 						"Komodo",
@@ -268,303 +382,2891 @@
 					],
 					"operation_type": "Liveaboard",
 					"featured": false,
+					"website": "https://benettaliveaboard.com/",
 					"featured_image": {
 						"$media": {
-							"file": "media/photo-1544551763-46a013bb70d5.jpg",
-							"alt": "Penyelam di atas terumbu",
-							"filename": "photo-1544551763-46a013bb70d5.jpg"
+							"file": "media/logos/benetta-liveaboard.png",
+							"alt": "Benetta Liveaboard",
+							"filename": "benetta-liveaboard.png"
 						}
 					}
 				}
 			},
 			{
-				"id": "member-scubaspa-zen-en",
-				"slug": "scubaspa-zen",
+				"id": "member-biak-dive-resort-en",
+				"slug": "biak-dive-resort",
 				"status": "published",
 				"locale": "en",
 				"data": {
-					"title": "Scubaspa Zen",
-					"summary": "Scubaspa Zen stands in for a wellness liveaboard based in Raja Ampat, where the trip pairs diving with a quieter onboard routine.",
-					"services": "Raja Ampat liveaboard with a wellness program on board.",
-					"regions": [
-						"Raja Ampat"
-					],
-					"operation_type": "Liveaboard",
-					"featured": false,
-					"featured_image": {
-						"$media": {
-							"file": "media/photo-1682687220742-aba13b6e50ba.jpg",
-							"alt": "Deep blue water over a reef slope",
-							"filename": "photo-1682687220742-aba13b6e50ba.jpg"
-						}
-					}
-				}
-			},
-			{
-				"id": "member-scubaspa-zen-id",
-				"slug": "scubaspa-zen",
-				"status": "published",
-				"locale": "id",
-				"translationOf": "member-scubaspa-zen-en",
-				"data": {
-					"title": "Scubaspa Zen",
-					"summary": "Scubaspa Zen mewakili liveaboard kebugaran yang berbasis di Raja Ampat, dengan perjalanan yang memasangkan selam dan ritme di atas kapal yang lebih tenang.",
-					"services": "Liveaboard Raja Ampat dengan program kebugaran di atas kapal.",
-					"regions": [
-						"Raja Ampat"
-					],
-					"operation_type": "Liveaboard",
-					"featured": false,
-					"featured_image": {
-						"$media": {
-							"file": "media/photo-1682687220742-aba13b6e50ba.jpg",
-							"alt": "Air biru di lereng terumbu",
-							"filename": "photo-1682687220742-aba13b6e50ba.jpg"
-						}
-					}
-				}
-			},
-			{
-				"id": "member-mikumba-diving-en",
-				"slug": "mikumba-diving",
-				"status": "published",
-				"locale": "en",
-				"data": {
-					"title": "Mikumba Diving",
-					"summary": "Mikumba Diving stands in for a liveaboard operator moving between Komodo and Raja Ampat.",
-					"services": "Liveaboard diving in Komodo and Raja Ampat.",
-					"regions": [
-						"Komodo",
-						"Raja Ampat"
-					],
-					"operation_type": "Liveaboard",
-					"featured": false,
-					"featured_image": {
-						"$media": {
-							"file": "media/photo-1546026423-cc4642628d2b.jpg",
-							"alt": "Coral heads in clear water",
-							"filename": "photo-1546026423-cc4642628d2b.jpg"
-						}
-					}
-				}
-			},
-			{
-				"id": "member-mikumba-diving-id",
-				"slug": "mikumba-diving",
-				"status": "published",
-				"locale": "id",
-				"translationOf": "member-mikumba-diving-en",
-				"data": {
-					"title": "Mikumba Diving",
-					"summary": "Mikumba Diving mewakili operator liveaboard yang berpindah antara Komodo dan Raja Ampat.",
-					"services": "Selam liveaboard di Komodo dan Raja Ampat.",
-					"regions": [
-						"Komodo",
-						"Raja Ampat"
-					],
-					"operation_type": "Liveaboard",
-					"featured": false,
-					"featured_image": {
-						"$media": {
-							"file": "media/photo-1546026423-cc4642628d2b.jpg",
-							"alt": "Kepala karang di air jernih",
-							"filename": "photo-1546026423-cc4642628d2b.jpg"
-						}
-					}
-				}
-			},
-			{
-				"id": "member-indo-seamore-en",
-				"slug": "indo-seamore",
-				"status": "published",
-				"locale": "en",
-				"data": {
-					"title": "Indo Seamore",
-					"summary": "Indo Seamore stands in for a phinisi liveaboard working the waters of eastern Indonesia, outside a single famous park.",
-					"services": "Phinisi liveaboard charters in eastern Indonesia.",
+					"title": "Biak Dive Resort",
+					"summary": "Dive resort in Biak. Public directories list it with Hotel Asana on Jalan Muhammad Yamin.",
+					"services": "Dive resort.",
 					"regions": [
 						"Other regions"
 					],
-					"operation_type": "Liveaboard",
+					"operation_type": "Dive resort or center",
 					"featured": false,
-					"featured_image": {
-						"$media": {
-							"file": "media/photo-1507525428034-b723cf961d3e.jpg",
-							"alt": "Coastal water seen from shore",
-							"filename": "photo-1507525428034-b723cf961d3e.jpg"
-						}
-					}
+					"whatsapp": "+6281330599930"
 				}
 			},
 			{
-				"id": "member-indo-seamore-id",
-				"slug": "indo-seamore",
+				"id": "member-biak-dive-resort-id",
+				"slug": "biak-dive-resort",
 				"status": "published",
 				"locale": "id",
-				"translationOf": "member-indo-seamore-en",
+				"translationOf": "member-biak-dive-resort-en",
 				"data": {
-					"title": "Indo Seamore",
-					"summary": "Indo Seamore mewakili liveaboard phinisi yang beroperasi di perairan Indonesia timur, di luar satu taman yang sudah terkenal.",
-					"services": "Charter liveaboard phinisi di Indonesia timur.",
+					"title": "Biak Dive Resort",
+					"summary": "Resort selam di Biak. Direktori publik mencantumkannya bersama Hotel Asana di Jalan Muhammad Yamin.",
+					"services": "Resort selam.",
 					"regions": [
 						"Other regions"
 					],
-					"operation_type": "Liveaboard",
+					"operation_type": "Dive resort or center",
 					"featured": false,
-					"featured_image": {
-						"$media": {
-							"file": "media/photo-1507525428034-b723cf961d3e.jpg",
-							"alt": "Perairan pantai dilihat dari darat",
-							"filename": "photo-1507525428034-b723cf961d3e.jpg"
-						}
-					}
+					"whatsapp": "+6281330599930"
 				}
 			},
 			{
-				"id": "member-cruising-indonesia-en",
-				"slug": "cruising-indonesia",
+				"id": "member-bina-samudera-indonesia-en",
+				"slug": "bina-samudera-indonesia",
 				"status": "published",
 				"locale": "en",
 				"data": {
-					"title": "Cruising Indonesia",
-					"summary": "Cruising Indonesia stands in for a specialist that arranges liveaboard itineraries across more than one region, rather than running a single boat from one jetty.",
-					"services": "Liveaboard planning across several Indonesian regions.",
+					"title": "Bina Samudera Indonesia/Scubatec Academy",
+					"summary": "Scubatec Academy, a Jakarta dive school with offices in Kemayoran and a training pool in Grogol.",
+					"services": "Dive training.",
 					"regions": [
-						"Raja Ampat",
-						"Komodo",
-						"Banda Sea",
-						"Bali"
+						"Jabodetabek"
 					],
-					"operation_type": "Travel specialist",
+					"operation_type": "Dive resort or center",
 					"featured": false,
-					"featured_image": {
-						"$media": {
-							"file": "media/photo-1468581264429-2548ef9eb732.jpg",
-							"alt": "Sunlight on the sea surface",
-							"filename": "photo-1468581264429-2548ef9eb732.jpg"
-						}
-					}
+					"website": "https://www.scubatecacademy.com/",
+					"email": "info@scubatecacademy.com",
+					"whatsapp": "+6281291111307"
 				}
 			},
 			{
-				"id": "member-cruising-indonesia-id",
-				"slug": "cruising-indonesia",
+				"id": "member-bina-samudera-indonesia-id",
+				"slug": "bina-samudera-indonesia",
 				"status": "published",
 				"locale": "id",
-				"translationOf": "member-cruising-indonesia-en",
+				"translationOf": "member-bina-samudera-indonesia-en",
 				"data": {
-					"title": "Cruising Indonesia",
-					"summary": "Cruising Indonesia mewakili spesialis yang menyusun itinerari liveaboard di lebih dari satu wilayah, bukan mengoperasikan satu kapal dari satu dermaga.",
-					"services": "Perencanaan liveaboard di beberapa wilayah Indonesia.",
+					"title": "Bina Samudera Indonesia/Scubatec Academy",
+					"summary": "Scubatec Academy, sekolah selam di Jakarta dengan kantor di Kemayoran dan kolam latihan di Grogol.",
+					"services": "Pelatihan selam.",
 					"regions": [
-						"Raja Ampat",
-						"Komodo",
-						"Banda Sea",
-						"Bali"
+						"Jabodetabek"
 					],
-					"operation_type": "Travel specialist",
+					"operation_type": "Dive resort or center",
 					"featured": false,
-					"featured_image": {
-						"$media": {
-							"file": "media/photo-1468581264429-2548ef9eb732.jpg",
-							"alt": "Cahaya matahari di permukaan laut",
-							"filename": "photo-1468581264429-2548ef9eb732.jpg"
-						}
-					}
+					"website": "https://www.scubatecacademy.com/",
+					"email": "info@scubatecacademy.com",
+					"whatsapp": "+6281291111307"
 				}
 			},
 			{
-				"id": "member-arenui-en",
-				"slug": "arenui",
+				"id": "member-bintan-black-coral-en",
+				"slug": "bintan-black-coral",
 				"status": "published",
 				"locale": "en",
 				"data": {
-					"title": "Arenui",
-					"summary": "Arenui stands in for a boutique liveaboard in Raja Ampat, with a smaller guest list and a longer time on the reef.",
-					"services": "Boutique liveaboard diving in Raja Ampat.",
+					"title": "Bintan Black Coral & DC",
+					"summary": "Dive center in Teluk Bakau, Gunung Kijang, Bintan.",
+					"services": "Dive center.",
 					"regions": [
-						"Raja Ampat"
+						"Other regions"
 					],
-					"operation_type": "Liveaboard",
+					"operation_type": "Dive resort or center",
 					"featured": false,
-					"featured_image": {
-						"$media": {
-							"file": "media/photo-1551244072-5d12893278ab.jpg",
-							"alt": "Sea turtle over coral",
-							"filename": "photo-1551244072-5d12893278ab.jpg"
-						}
-					}
+					"whatsapp": "+6281277845215"
 				}
 			},
 			{
-				"id": "member-arenui-id",
-				"slug": "arenui",
+				"id": "member-bintan-black-coral-id",
+				"slug": "bintan-black-coral",
 				"status": "published",
 				"locale": "id",
-				"translationOf": "member-arenui-en",
+				"translationOf": "member-bintan-black-coral-en",
 				"data": {
-					"title": "Arenui",
-					"summary": "Arenui mewakili liveaboard butik di Raja Ampat, dengan jumlah tamu yang lebih kecil dan waktu yang lebih panjang di terumbu.",
-					"services": "Selam liveaboard butik di Raja Ampat.",
+					"title": "Bintan Black Coral & DC",
+					"summary": "Pusat selam di Teluk Bakau, Gunung Kijang, Bintan.",
+					"services": "Pusat selam.",
 					"regions": [
-						"Raja Ampat"
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"whatsapp": "+6281277845215"
+				}
+			},
+			{
+				"id": "member-blue-tuturuga-en",
+				"slug": "blue-tuturuga",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Blue Tuturuga DC",
+					"summary": "Dive shop in North Jakarta, listed on Jalan Kelapa Sawit.",
+					"services": "Dive shop.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-blue-tuturuga-id",
+				"slug": "blue-tuturuga",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-blue-tuturuga-en",
+				"data": {
+					"title": "Blue Tuturuga DC",
+					"summary": "Toko selam di Jakarta Utara, tercantum di Jalan Kelapa Sawit.",
+					"services": "Toko selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-borneo-cha-en",
+				"slug": "borneo-cha",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Borneo Cha DC",
+					"summary": "SSI dive center in Banjarbaru, South Kalimantan, running trips to Derawan and Maratua.",
+					"services": "Dive center.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "ayuzarica0517@gmail.com",
+					"whatsapp": "+62813272949"
+				}
+			},
+			{
+				"id": "member-borneo-cha-id",
+				"slug": "borneo-cha",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-borneo-cha-en",
+				"data": {
+					"title": "Borneo Cha DC",
+					"summary": "Pusat selam SSI di Banjarbaru, Kalimantan Selatan, yang menjalankan perjalanan ke Derawan dan Maratua.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "ayuzarica0517@gmail.com",
+					"whatsapp": "+62813272949"
+				}
+			},
+			{
+				"id": "member-cajoma-indonesia-en",
+				"slug": "cajoma-indonesia",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Cajoma Indonesia",
+					"summary": "Phinisi and liveaboard operator based in Labuan Bajo, with a sales office in Surabaya.",
+					"services": "Liveaboard diving.",
+					"regions": [
+						"Komodo"
 					],
 					"operation_type": "Liveaboard",
 					"featured": false,
+					"website": "https://www.cajoma.co.id/",
+					"email": "info@cajoma.co.id",
+					"whatsapp": "+628113409008",
 					"featured_image": {
 						"$media": {
-							"file": "media/photo-1551244072-5d12893278ab.jpg",
-							"alt": "Penyu di atas karang",
-							"filename": "photo-1551244072-5d12893278ab.jpg"
+							"file": "media/logos/cajoma-indonesia.png",
+							"alt": "Cajoma Indonesia",
+							"filename": "cajoma-indonesia.png"
 						}
 					}
 				}
 			},
 			{
-				"id": "member-your-company-en",
-				"slug": "your-company",
+				"id": "member-cajoma-indonesia-id",
+				"slug": "cajoma-indonesia",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-cajoma-indonesia-en",
+				"data": {
+					"title": "Cajoma Indonesia",
+					"summary": "Operator phinisi dan liveaboard yang berbasis di Labuan Bajo, dengan kantor penjualan di Surabaya.",
+					"services": "Selam liveaboard.",
+					"regions": [
+						"Komodo"
+					],
+					"operation_type": "Liveaboard",
+					"featured": false,
+					"website": "https://www.cajoma.co.id/",
+					"email": "info@cajoma.co.id",
+					"whatsapp": "+628113409008",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/cajoma-indonesia.png",
+							"alt": "Cajoma Indonesia",
+							"filename": "cajoma-indonesia.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-derawan-indonesia-indah-en",
+				"slug": "derawan-indonesia-indah",
 				"status": "published",
 				"locale": "en",
 				"data": {
-					"title": "Your Company",
-					"summary": "Your Company is the open slot in the directory: a dive center or resort listing, ready for a member to replace with its own name, region, and photographs.",
-					"services": "Resort or dive-center operation. The details come from the member.",
+					"title": "Derawan Indonesia Indah",
+					"summary": "IDCA member. A company of this name is registered on Pulau Derawan. A public dive-operation website was not confirmed.",
+					"services": "Dive center.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-derawan-indonesia-indah-id",
+				"slug": "derawan-indonesia-indah",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-derawan-indonesia-indah-en",
+				"data": {
+					"title": "Derawan Indonesia Indah",
+					"summary": "Anggota IDCA. Perusahaan dengan nama ini terdaftar di Pulau Derawan. Situs operasi selam publik belum terkonfirmasi.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-divers-paradise-komodo-en",
+				"slug": "divers-paradise-komodo",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Divers Paradise Komodo",
+					"summary": "SSI dive center on Jalan Mutiara, Labuan Bajo.",
+					"services": "Dive center.",
+					"regions": [
+						"Komodo"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://diversparadisekomodo.com/",
+					"email": "info@diversparadisekomodo.com",
+					"whatsapp": "+6281236704521",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/divers-paradise-komodo.png",
+							"alt": "Divers Paradise Komodo",
+							"filename": "divers-paradise-komodo.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-divers-paradise-komodo-id",
+				"slug": "divers-paradise-komodo",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-divers-paradise-komodo-en",
+				"data": {
+					"title": "Divers Paradise Komodo",
+					"summary": "Pusat selam SSI di Jalan Mutiara, Labuan Bajo.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Komodo"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://diversparadisekomodo.com/",
+					"email": "info@diversparadisekomodo.com",
+					"whatsapp": "+6281236704521",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/divers-paradise-komodo.png",
+							"alt": "Divers Paradise Komodo",
+							"filename": "divers-paradise-komodo.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-diving-resort-noble-bali-tulamben-en",
+				"slug": "diving-resort-noble-bali-tulamben",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Diving Resort Noble Bali Tulamben",
+					"summary": "PADI dive resort in Tulamben, Karangasem, Bali.",
+					"services": "Dive resort.",
 					"regions": [
 						"Bali"
 					],
 					"operation_type": "Dive resort or center",
 					"featured": false,
-					"featured_image": {
-						"$media": {
-							"file": "media/photo-1505118380757-91f5f5632de0.jpg",
-							"alt": "Open sea under a bright sky",
-							"filename": "photo-1505118380757-91f5f5632de0.jpg"
-						}
-					}
+					"email": "nobledivetulamben@gmail.com",
+					"whatsapp": "+6282236365656"
 				}
 			},
 			{
-				"id": "member-your-company-id",
-				"slug": "your-company",
+				"id": "member-diving-resort-noble-bali-tulamben-id",
+				"slug": "diving-resort-noble-bali-tulamben",
 				"status": "published",
 				"locale": "id",
-				"translationOf": "member-your-company-en",
+				"translationOf": "member-diving-resort-noble-bali-tulamben-en",
 				"data": {
-					"title": "Your Company",
-					"summary": "Your Company adalah tempat kosong di direktori: cantuman pusat selam atau resort, siap diganti anggota dengan nama, wilayah, dan fotonya sendiri.",
-					"services": "Operasi resort atau pusat selam. Rinciannya berasal dari anggota.",
+					"title": "Diving Resort Noble Bali Tulamben",
+					"summary": "Resort selam PADI di Tulamben, Karangasem, Bali.",
+					"services": "Resort selam.",
 					"regions": [
 						"Bali"
 					],
 					"operation_type": "Dive resort or center",
 					"featured": false,
+					"email": "nobledivetulamben@gmail.com",
+					"whatsapp": "+6282236365656"
+				}
+			},
+			{
+				"id": "member-dunia-selam-en",
+				"slug": "dunia-selam",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Dunia Selam",
+					"summary": "PT Dunia Selam Nusantara, an SSI dive center on Jalan Bangka Raya, South Jakarta.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.dunia-selam.com/",
+					"email": "info@dunia-selam.com"
+				}
+			},
+			{
+				"id": "member-dunia-selam-id",
+				"slug": "dunia-selam",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-dunia-selam-en",
+				"data": {
+					"title": "Dunia Selam",
+					"summary": "PT Dunia Selam Nusantara, pusat selam SSI di Jalan Bangka Raya, Jakarta Selatan.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.dunia-selam.com/",
+					"email": "info@dunia-selam.com"
+				}
+			},
+			{
+				"id": "member-ena-dc-marine-adventure-en",
+				"slug": "ena-dc-marine-adventure",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Ena DC & Marine Adventure",
+					"summary": "Dive center in Sanur, Bali, listed publicly as a PADI center.",
+					"services": "Dive center.",
+					"regions": [
+						"Bali"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-ena-dc-marine-adventure-id",
+				"slug": "ena-dc-marine-adventure",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-ena-dc-marine-adventure-en",
+				"data": {
+					"title": "Ena DC & Marine Adventure",
+					"summary": "Pusat selam di Sanur, Bali, yang tercantum di publik sebagai pusat PADI.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Bali"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-flying-fish-jakarta-en",
+				"slug": "flying-fish-jakarta",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Flying Fish Jakarta",
+					"summary": "SSI dive center in Jakarta, on Jalan Letjen M.T. Haryono.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.flyingfishjakarta.com/",
+					"email": "flyingfish.jakarta@gmail.com",
 					"featured_image": {
 						"$media": {
-							"file": "media/photo-1505118380757-91f5f5632de0.jpg",
-							"alt": "Laut lepas di bawah langit cerah",
-							"filename": "photo-1505118380757-91f5f5632de0.jpg"
+							"file": "media/logos/flying-fish-jakarta.png",
+							"alt": "Flying Fish Jakarta",
+							"filename": "flying-fish-jakarta.png"
 						}
 					}
+				}
+			},
+			{
+				"id": "member-flying-fish-jakarta-id",
+				"slug": "flying-fish-jakarta",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-flying-fish-jakarta-en",
+				"data": {
+					"title": "Flying Fish Jakarta",
+					"summary": "Pusat selam SSI di Jakarta, di Jalan Letjen M.T. Haryono.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.flyingfishjakarta.com/",
+					"email": "flyingfish.jakarta@gmail.com",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/flying-fish-jakarta.png",
+							"alt": "Flying Fish Jakarta",
+							"filename": "flying-fish-jakarta.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-gea-divers-en",
+				"slug": "gea-divers",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Gea Divers",
+					"summary": "Dive operator on Pulau Harapan, Kepulauan Seribu.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://geadivers.id/",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/gea-divers.png",
+							"alt": "Gea Divers",
+							"filename": "gea-divers.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-gea-divers-id",
+				"slug": "gea-divers",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-gea-divers-en",
+				"data": {
+					"title": "Gea Divers",
+					"summary": "Operator selam di Pulau Harapan, Kepulauan Seribu.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://geadivers.id/",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/gea-divers.png",
+							"alt": "Gea Divers",
+							"filename": "gea-divers.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-global-dc-jakarta-en",
+				"slug": "global-dc-jakarta",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Global DC Jakarta",
+					"summary": "Jakarta branch of PT Pusat Wisata Selam Global, which also operates centers outside the capital.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://globaldive.co.id/"
+				}
+			},
+			{
+				"id": "member-global-dc-jakarta-id",
+				"slug": "global-dc-jakarta",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-global-dc-jakarta-en",
+				"data": {
+					"title": "Global DC Jakarta",
+					"summary": "Cabang Jakarta dari PT Pusat Wisata Selam Global, yang juga mengoperasikan pusat di luar ibu kota.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://globaldive.co.id/"
+				}
+			},
+			{
+				"id": "member-global-dive-gorontalo-en",
+				"slug": "global-dive-gorontalo",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Global Dive Gorontalo",
+					"summary": "Gorontalo branch of PT Pusat Wisata Selam Global.",
+					"services": "Dive center.",
+					"regions": [
+						"Sulawesi"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://globaldive.co.id/"
+				}
+			},
+			{
+				"id": "member-global-dive-gorontalo-id",
+				"slug": "global-dive-gorontalo",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-global-dive-gorontalo-en",
+				"data": {
+					"title": "Global Dive Gorontalo",
+					"summary": "Cabang Gorontalo dari PT Pusat Wisata Selam Global.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Sulawesi"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://globaldive.co.id/"
+				}
+			},
+			{
+				"id": "member-green-nirvana-resort-maratua-en",
+				"slug": "green-nirvana-resort-maratua",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Green Nirvana Resort Maratua",
+					"summary": "PADI dive resort in Payung-Payung, Maratua, Berau. Dive operations are also called Kuhita Dive Maratua.",
+					"services": "Dive resort.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.greennirvanaresort.com/",
+					"email": "inquiry@greennirvanaresort.com",
+					"whatsapp": "+6282158298599",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/green-nirvana-resort-maratua.png",
+							"alt": "Green Nirvana Resort Maratua",
+							"filename": "green-nirvana-resort-maratua.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-green-nirvana-resort-maratua-id",
+				"slug": "green-nirvana-resort-maratua",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-green-nirvana-resort-maratua-en",
+				"data": {
+					"title": "Green Nirvana Resort Maratua",
+					"summary": "Resort selam PADI di Payung-Payung, Maratua, Berau. Operasi selamnya juga disebut Kuhita Dive Maratua.",
+					"services": "Resort selam.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.greennirvanaresort.com/",
+					"email": "inquiry@greennirvanaresort.com",
+					"whatsapp": "+6282158298599",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/green-nirvana-resort-maratua.png",
+							"alt": "Green Nirvana Resort Maratua",
+							"filename": "green-nirvana-resort-maratua.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-hamueco-raja-ampat-dive-resort-en",
+				"slug": "hamueco-raja-ampat-dive-resort",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Hamueco Raja Ampat Dive Resort",
+					"summary": "Dive resort in Raja Ampat.",
+					"services": "Dive resort.",
+					"regions": [
+						"Raja Ampat"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.hamueco.com/",
+					"email": "info.hamueco@gmail.com",
+					"whatsapp": "+6282240070033",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/hamueco-raja-ampat-dive-resort.png",
+							"alt": "Hamueco Raja Ampat Dive Resort",
+							"filename": "hamueco-raja-ampat-dive-resort.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-hamueco-raja-ampat-dive-resort-id",
+				"slug": "hamueco-raja-ampat-dive-resort",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-hamueco-raja-ampat-dive-resort-en",
+				"data": {
+					"title": "Hamueco Raja Ampat Dive Resort",
+					"summary": "Resort selam di Raja Ampat.",
+					"services": "Resort selam.",
+					"regions": [
+						"Raja Ampat"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.hamueco.com/",
+					"email": "info.hamueco@gmail.com",
+					"whatsapp": "+6282240070033",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/hamueco-raja-ampat-dive-resort.png",
+							"alt": "Hamueco Raja Ampat Dive Resort",
+							"filename": "hamueco-raja-ampat-dive-resort.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-hobi-dive-en",
+				"slug": "hobi-dive",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Hobi Dive",
+					"summary": "PADI dive center in Alam Sutera, South Tangerang. The public site uses the name Hobby Dive.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.hobbydive.com/",
+					"email": "hobbydive@gmail.com",
+					"whatsapp": "+62811821331",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/hobi-dive.jpg",
+							"alt": "Hobi Dive",
+							"filename": "hobi-dive.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-hobi-dive-id",
+				"slug": "hobi-dive",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-hobi-dive-en",
+				"data": {
+					"title": "Hobi Dive",
+					"summary": "Pusat selam PADI di Alam Sutera, Tangerang Selatan. Situs publiknya memakai nama Hobby Dive.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.hobbydive.com/",
+					"email": "hobbydive@gmail.com",
+					"whatsapp": "+62811821331",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/hobi-dive.jpg",
+							"alt": "Hobi Dive",
+							"filename": "hobi-dive.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-idea-mandiri-perkasa-en",
+				"slug": "idea-mandiri-perkasa",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Idea Mandiri Perkasa",
+					"summary": "IDCA member. A public website or listing for this name was not found.",
+					"services": "Dive center.",
+					"regions": [],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-idea-mandiri-perkasa-id",
+				"slug": "idea-mandiri-perkasa",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-idea-mandiri-perkasa-en",
+				"data": {
+					"title": "Idea Mandiri Perkasa",
+					"summary": "Anggota IDCA. Situs atau cantuman publik untuk nama ini tidak ditemukan.",
+					"services": "Pusat selam.",
+					"regions": [],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-idive-komodo-en",
+				"slug": "idive-komodo",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "iDIVE Komodo",
+					"summary": "SSI dive center on Jalan Lamtoro, Labuan Bajo, near Komodo Airport.",
+					"services": "Dive center.",
+					"regions": [
+						"Komodo"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.idivekomodoindonesia.com/",
+					"email": "dive@idivekomodoindonesia.com",
+					"whatsapp": "+628119111001"
+				}
+			},
+			{
+				"id": "member-idive-komodo-id",
+				"slug": "idive-komodo",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-idive-komodo-en",
+				"data": {
+					"title": "iDIVE Komodo",
+					"summary": "Pusat selam SSI di Jalan Lamtoro, Labuan Bajo, dekat Bandara Komodo.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Komodo"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.idivekomodoindonesia.com/",
+					"email": "dive@idivekomodoindonesia.com",
+					"whatsapp": "+628119111001"
+				}
+			},
+			{
+				"id": "member-instrument-dive-adventure-en",
+				"slug": "instrument-dive-adventure",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Instrument Dive Adventure",
+					"summary": "SSI dive center in Bekasi Timur. The public site uses the name iDiventure.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://idiventure.weebly.com/"
+				}
+			},
+			{
+				"id": "member-instrument-dive-adventure-id",
+				"slug": "instrument-dive-adventure",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-instrument-dive-adventure-en",
+				"data": {
+					"title": "Instrument Dive Adventure",
+					"summary": "Pusat selam SSI di Bekasi Timur. Situs publiknya memakai nama iDiventure.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://idiventure.weebly.com/"
+				}
+			},
+			{
+				"id": "member-jakarta-diving-school-en",
+				"slug": "jakarta-diving-school",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Jakarta Diving School",
+					"summary": "PADI dive school on Jalan Pangeran Jayakarta, Central Jakarta.",
+					"services": "Dive training.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.jakartadivingschool.com/",
+					"email": "chandi_wijaya@yahoo.com",
+					"whatsapp": "+6281519990622"
+				}
+			},
+			{
+				"id": "member-jakarta-diving-school-id",
+				"slug": "jakarta-diving-school",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-jakarta-diving-school-en",
+				"data": {
+					"title": "Jakarta Diving School",
+					"summary": "Sekolah selam PADI di Jalan Pangeran Jayakarta, Jakarta Pusat.",
+					"services": "Pelatihan selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.jakartadivingschool.com/",
+					"email": "chandi_wijaya@yahoo.com",
+					"whatsapp": "+6281519990622"
+				}
+			},
+			{
+				"id": "member-jakarta-ocean-explorer-en",
+				"slug": "jakarta-ocean-explorer",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Jakarta Ocean Explorer",
+					"summary": "SSI dive center on Jalan Pahlawan Revolusi, East Jakarta.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://jakartaoceanexplorer.com/",
+					"email": "jakartaoceanexplorer@gmail.com",
+					"whatsapp": "+6285808008000",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/jakarta-ocean-explorer.png",
+							"alt": "Jakarta Ocean Explorer",
+							"filename": "jakarta-ocean-explorer.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-jakarta-ocean-explorer-id",
+				"slug": "jakarta-ocean-explorer",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-jakarta-ocean-explorer-en",
+				"data": {
+					"title": "Jakarta Ocean Explorer",
+					"summary": "Pusat selam SSI di Jalan Pahlawan Revolusi, Jakarta Timur.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://jakartaoceanexplorer.com/",
+					"email": "jakartaoceanexplorer@gmail.com",
+					"whatsapp": "+6285808008000",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/jakarta-ocean-explorer.png",
+							"alt": "Jakarta Ocean Explorer",
+							"filename": "jakarta-ocean-explorer.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-javascuba-en",
+				"slug": "javascuba",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Javascuba",
+					"summary": "PADI dive center in Jakarta, with a training pool at Gajah Mada Plaza and an office in Green Garden.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.javascuba.com/",
+					"email": "info@javascuba.com",
+					"whatsapp": "+6281399459701"
+				}
+			},
+			{
+				"id": "member-javascuba-id",
+				"slug": "javascuba",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-javascuba-en",
+				"data": {
+					"title": "Javascuba",
+					"summary": "Pusat selam PADI di Jakarta, dengan kolam latihan di Gajah Mada Plaza dan kantor di Green Garden.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.javascuba.com/",
+					"email": "info@javascuba.com",
+					"whatsapp": "+6281399459701"
+				}
+			},
+			{
+				"id": "member-kafe-penyelaman-en",
+				"slug": "kafe-penyelaman",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Kafe Penyelaman",
+					"summary": "Marine-education and dive-training group publishing at penyelaman.com.",
+					"services": "Dive training.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.penyelaman.com/",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/kafe-penyelaman.png",
+							"alt": "Kafe Penyelaman",
+							"filename": "kafe-penyelaman.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-kafe-penyelaman-id",
+				"slug": "kafe-penyelaman",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-kafe-penyelaman-en",
+				"data": {
+					"title": "Kafe Penyelaman",
+					"summary": "Kelompok edukasi laut dan pelatihan selam yang menerbitkan penyelaman.com.",
+					"services": "Pelatihan selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.penyelaman.com/",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/kafe-penyelaman.png",
+							"alt": "Kafe Penyelaman",
+							"filename": "kafe-penyelaman.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-kristal-klear-dive-en",
+				"slug": "kristal-klear-dive",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Kristal Klear Dive",
+					"summary": "PADI dive center at Hotel Kristal, Cilandak, South Jakarta.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.kristalkleardive.com/",
+					"email": "kristalkleardive@gmail.com",
+					"whatsapp": "+628119196267"
+				}
+			},
+			{
+				"id": "member-kristal-klear-dive-id",
+				"slug": "kristal-klear-dive",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-kristal-klear-dive-en",
+				"data": {
+					"title": "Kristal Klear Dive",
+					"summary": "Pusat selam PADI di Hotel Kristal, Cilandak, Jakarta Selatan.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.kristalkleardive.com/",
+					"email": "kristalkleardive@gmail.com",
+					"whatsapp": "+628119196267"
+				}
+			},
+			{
+				"id": "member-kurabesi-dive-en",
+				"slug": "kurabesi-dive",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Kurabesi Dive",
+					"summary": "Listed separately from Kurabesi Dive School. Public directories show one SSI center under the Kurabesi name in East Jakarta.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-kurabesi-dive-id",
+				"slug": "kurabesi-dive",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-kurabesi-dive-en",
+				"data": {
+					"title": "Kurabesi Dive",
+					"summary": "Tercantum terpisah dari Kurabesi Dive School. Direktori publik menunjukkan satu pusat SSI dengan nama Kurabesi di Jakarta Timur.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-kurabesi-dive-school-en",
+				"slug": "kurabesi-dive-school",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Kurabesi Dive School",
+					"summary": "SSI dive school in Cipinang Muara, Jatinegara, East Jakarta.",
+					"services": "Dive training.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "info@kurabesidiveschool.com",
+					"whatsapp": "+628115415335"
+				}
+			},
+			{
+				"id": "member-kurabesi-dive-school-id",
+				"slug": "kurabesi-dive-school",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-kurabesi-dive-school-en",
+				"data": {
+					"title": "Kurabesi Dive School",
+					"summary": "Sekolah selam SSI di Cipinang Muara, Jatinegara, Jakarta Timur.",
+					"services": "Pelatihan selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "info@kurabesidiveschool.com",
+					"whatsapp": "+628115415335"
+				}
+			},
+			{
+				"id": "member-laguna-gili-resort-en",
+				"slug": "laguna-gili-resort",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Laguna Gili Resort",
+					"summary": "PADI dive center on Gili Trawangan, a member of the Gili Island Dive Association.",
+					"services": "Dive center.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-laguna-gili-resort-id",
+				"slug": "laguna-gili-resort",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-laguna-gili-resort-en",
+				"data": {
+					"title": "Laguna Gili Resort",
+					"summary": "Pusat selam PADI di Gili Trawangan, anggota Gili Island Dive Association.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-lampung-scuba-en",
+				"slug": "lampung-scuba",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Lampung Scuba",
+					"summary": "Pusat Selam Lampung, an SSI dive center in Labuhan Ratu, Bandar Lampung.",
+					"services": "Dive center.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.pusatselamlampung.com/",
+					"email": "pusatselamlampung@gmail.com"
+				}
+			},
+			{
+				"id": "member-lampung-scuba-id",
+				"slug": "lampung-scuba",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-lampung-scuba-en",
+				"data": {
+					"title": "Lampung Scuba",
+					"summary": "Pusat Selam Lampung, pusat selam SSI di Labuhan Ratu, Bandar Lampung.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.pusatselamlampung.com/",
+					"email": "pusatselamlampung@gmail.com"
+				}
+			},
+			{
+				"id": "member-liveaboard-cruise-indonesia-en",
+				"slug": "liveaboard-cruise-indonesia",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Liveaboard Cruise Indonesia",
+					"summary": "PT Liveaboard Cruise Indonesia, a liveaboard operator with its head office in Surabaya and branches in Komodo, Raja Ampat, and Manado.",
+					"services": "Liveaboard diving.",
+					"regions": [
+						"Komodo",
+						"Raja Ampat",
+						"Sulawesi"
+					],
+					"operation_type": "Liveaboard",
+					"featured": false,
+					"website": "https://www.liveaboard-indonesia.co.id/",
+					"email": "info@liveaboard-indonesia.co.id",
+					"whatsapp": "+628111808244",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/liveaboard-cruise-indonesia.png",
+							"alt": "Liveaboard Cruise Indonesia",
+							"filename": "liveaboard-cruise-indonesia.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-liveaboard-cruise-indonesia-id",
+				"slug": "liveaboard-cruise-indonesia",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-liveaboard-cruise-indonesia-en",
+				"data": {
+					"title": "Liveaboard Cruise Indonesia",
+					"summary": "PT Liveaboard Cruise Indonesia, operator liveaboard dengan kantor pusat di Surabaya dan cabang di Komodo, Raja Ampat, dan Manado.",
+					"services": "Selam liveaboard.",
+					"regions": [
+						"Komodo",
+						"Raja Ampat",
+						"Sulawesi"
+					],
+					"operation_type": "Liveaboard",
+					"featured": false,
+					"website": "https://www.liveaboard-indonesia.co.id/",
+					"email": "info@liveaboard-indonesia.co.id",
+					"whatsapp": "+628111808244",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/liveaboard-cruise-indonesia.png",
+							"alt": "Liveaboard Cruise Indonesia",
+							"filename": "liveaboard-cruise-indonesia.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-livingseas-en",
+				"slug": "livingseas",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Livingseas",
+					"summary": "SSI dive center with a Jakarta base in Pluit and a Bali base in Padangbai.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek",
+						"Bali"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-livingseas-id",
+				"slug": "livingseas",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-livingseas-en",
+				"data": {
+					"title": "Livingseas",
+					"summary": "Pusat selam SSI dengan basis Jakarta di Pluit dan basis Bali di Padangbai.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek",
+						"Bali"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-lunar-dive-resort-en",
+				"slug": "lunar-dive-resort",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Lunar Dive Resort",
+					"summary": "Dive resort inland from the coast at Tulamben, Bali, near the USAT Liberty.",
+					"services": "Dive resort.",
+					"regions": [
+						"Bali"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://lunardiveresort.com/",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/lunar-dive-resort.png",
+							"alt": "Lunar Dive Resort",
+							"filename": "lunar-dive-resort.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-lunar-dive-resort-id",
+				"slug": "lunar-dive-resort",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-lunar-dive-resort-en",
+				"data": {
+					"title": "Lunar Dive Resort",
+					"summary": "Resort selam di daratan Tulamben, Bali, dekat USAT Liberty.",
+					"services": "Resort selam.",
+					"regions": [
+						"Bali"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://lunardiveresort.com/",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/lunar-dive-resort.png",
+							"alt": "Lunar Dive Resort",
+							"filename": "lunar-dive-resort.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-manado-scuba-en",
+				"slug": "manado-scuba",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Manado Scuba",
+					"summary": "Dive center listed at NDC Resort, Molas, Bunaken, North Sulawesi.",
+					"services": "Dive center.",
+					"regions": [
+						"Sulawesi"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-manado-scuba-id",
+				"slug": "manado-scuba",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-manado-scuba-en",
+				"data": {
+					"title": "Manado Scuba",
+					"summary": "Pusat selam yang tercantum di NDC Resort, Molas, Bunaken, Sulawesi Utara.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Sulawesi"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-maratua-dc-lodge-en",
+				"slug": "maratua-dc-lodge",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Maratua DC & Lodge",
+					"summary": "IDCA member on Maratua. Several resorts there use similar names, so no single public website is attached here.",
+					"services": "Dive resort.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-maratua-dc-lodge-id",
+				"slug": "maratua-dc-lodge",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-maratua-dc-lodge-en",
+				"data": {
+					"title": "Maratua DC & Lodge",
+					"summary": "Anggota IDCA di Maratua. Beberapa resort di sana memakai nama yang mirip, jadi tidak ada satu situs publik yang dicantumkan di sini.",
+					"services": "Resort selam.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-mari-menyelam-bersama-en",
+				"slug": "mari-menyelam-bersama",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Mari Menyelam Bersama / Family Diver Jakarta",
+					"summary": "PADI dive center in Cimanggis, Depok, also called Family Diver Jakarta.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://familydiver.id/",
+					"email": "familydiver@gmail.com",
+					"whatsapp": "+628111086996"
+				}
+			},
+			{
+				"id": "member-mari-menyelam-bersama-id",
+				"slug": "mari-menyelam-bersama",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-mari-menyelam-bersama-en",
+				"data": {
+					"title": "Mari Menyelam Bersama / Family Diver Jakarta",
+					"summary": "Pusat selam PADI di Cimanggis, Depok, yang juga disebut Family Diver Jakarta.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://familydiver.id/",
+					"email": "familydiver@gmail.com",
+					"whatsapp": "+628111086996"
+				}
+			},
+			{
+				"id": "member-maxs-dc-batam-en",
+				"slug": "maxs-dc-batam",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Max's DC Batam",
+					"summary": "PADI dive center in Batam Centre.",
+					"services": "Dive center.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "gerry.maxsdivecentre@gmail.com",
+					"whatsapp": "+6282390263600"
+				}
+			},
+			{
+				"id": "member-maxs-dc-batam-id",
+				"slug": "maxs-dc-batam",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-maxs-dc-batam-en",
+				"data": {
+					"title": "Max's DC Batam",
+					"summary": "Pusat selam PADI di Batam Centre.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "gerry.maxsdivecentre@gmail.com",
+					"whatsapp": "+6282390263600"
+				}
+			},
+			{
+				"id": "member-mazu-diver-en",
+				"slug": "mazu-diver",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Mazu Ecowisata",
+					"summary": "Mazu Divers, an SSI dive center and training base at Pulau Pramuka, Kepulauan Seribu. The company name is CV Mazu Ecowisata.",
+					"services": "SSI dive center, dive education, and dive trips.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.mazudivers.net/",
+					"email": "marketing@mazudivers.net",
+					"whatsapp": "+6285107145488",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/mazu-ecowisata.png",
+							"alt": "Mazu Ecowisata",
+							"filename": "mazu-ecowisata.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-mazu-diver-id",
+				"slug": "mazu-diver",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-mazu-diver-en",
+				"data": {
+					"title": "Mazu Ecowisata",
+					"summary": "Mazu Divers, pusat selam dan pelatihan SSI di Pulau Pramuka, Kepulauan Seribu. Nama perusahaannya CV Mazu Ecowisata.",
+					"services": "Pusat selam SSI, pendidikan selam, dan perjalanan selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.mazudivers.net/",
+					"email": "marketing@mazudivers.net",
+					"whatsapp": "+6285107145488",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/mazu-ecowisata.png",
+							"alt": "Mazu Ecowisata",
+							"filename": "mazu-ecowisata.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-milakancana-dc-en",
+				"slug": "milakancana-dc",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Milakancana DC",
+					"summary": "Dive training center at the Milakancana pool, GOR Padjajaran, Bogor.",
+					"services": "Dive training.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://milakancanadive.com/",
+					"whatsapp": "+6287772788305"
+				}
+			},
+			{
+				"id": "member-milakancana-dc-id",
+				"slug": "milakancana-dc",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-milakancana-dc-en",
+				"data": {
+					"title": "Milakancana DC",
+					"summary": "Pusat pelatihan selam di kolam Milakancana, GOR Padjajaran, Bogor.",
+					"services": "Pelatihan selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://milakancanadive.com/",
+					"whatsapp": "+6287772788305"
+				}
+			},
+			{
+				"id": "member-naira-dc-en",
+				"slug": "naira-dc",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Naira DC",
+					"summary": "Dive center on Jalan Maulana, Banda Neira.",
+					"services": "Dive center.",
+					"regions": [
+						"Banda Sea"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "likesbarondaindonesia@gmail.com",
+					"whatsapp": "+6281246188322"
+				}
+			},
+			{
+				"id": "member-naira-dc-id",
+				"slug": "naira-dc",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-naira-dc-en",
+				"data": {
+					"title": "Naira DC",
+					"summary": "Pusat selam di Jalan Maulana, Banda Neira.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Banda Sea"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "likesbarondaindonesia@gmail.com",
+					"whatsapp": "+6281246188322"
+				}
+			},
+			{
+				"id": "member-nautika-dira-tera-en",
+				"slug": "nautika-dira-tera",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Nautika Dira Tera/NDT Dive",
+					"summary": "Jakarta dive company that also operates Nautika Dive Alor, a PADI resort in Alor.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek",
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://nautikadivealor.com/",
+					"email": "info@ndtdive.com",
+					"whatsapp": "+628113429363"
+				}
+			},
+			{
+				"id": "member-nautika-dira-tera-id",
+				"slug": "nautika-dira-tera",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-nautika-dira-tera-en",
+				"data": {
+					"title": "Nautika Dira Tera/NDT Dive",
+					"summary": "Perusahaan selam di Jakarta yang juga mengoperasikan Nautika Dive Alor, resort PADI di Alor.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek",
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://nautikadivealor.com/",
+					"email": "info@ndtdive.com",
+					"whatsapp": "+628113429363"
+				}
+			},
+			{
+				"id": "member-octopus-dive-indonesia-en",
+				"slug": "octopus-dive-indonesia",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Octopus Dive Indonesia",
+					"summary": "SSI dive center in Desa Ped, Nusa Penida.",
+					"services": "Dive center.",
+					"regions": [
+						"Bali"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://octopusdivepenida.com/",
+					"email": "info@octopusdivepenida.com",
+					"whatsapp": "+6281222688477",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/octopus-dive-indonesia.png",
+							"alt": "Octopus Dive Indonesia",
+							"filename": "octopus-dive-indonesia.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-octopus-dive-indonesia-id",
+				"slug": "octopus-dive-indonesia",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-octopus-dive-indonesia-en",
+				"data": {
+					"title": "Octopus Dive Indonesia",
+					"summary": "Pusat selam SSI di Desa Ped, Nusa Penida.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Bali"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://octopusdivepenida.com/",
+					"email": "info@octopusdivepenida.com",
+					"whatsapp": "+6281222688477",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/octopus-dive-indonesia.png",
+							"alt": "Octopus Dive Indonesia",
+							"filename": "octopus-dive-indonesia.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-odydive-center-en",
+				"slug": "odydive-center",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Odydive Center",
+					"summary": "PADI dive center on Jalan Tebet Timur Raya, South Jakarta.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://odydive.com/",
+					"whatsapp": "+628119556888",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/odydive-center.png",
+							"alt": "Odydive Center",
+							"filename": "odydive-center.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-odydive-center-id",
+				"slug": "odydive-center",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-odydive-center-en",
+				"data": {
+					"title": "Odydive Center",
+					"summary": "Pusat selam PADI di Jalan Tebet Timur Raya, Jakarta Selatan.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://odydive.com/",
+					"whatsapp": "+628119556888",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/odydive-center.png",
+							"alt": "Odydive Center",
+							"filename": "odydive-center.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-odyssea-utama-en",
+				"slug": "odyssea-utama",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Odyssea Utama/Cocotinos",
+					"summary": "PT Odyssea Utama, operating dive services at Cocotinos Manado in Kima Bajo, North Minahasa.",
+					"services": "Dive resort.",
+					"regions": [
+						"Sulawesi"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.odysseadivers.com/",
+					"email": "info@cocotinos-manado.com",
+					"whatsapp": "+628124308800"
+				}
+			},
+			{
+				"id": "member-odyssea-utama-id",
+				"slug": "odyssea-utama",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-odyssea-utama-en",
+				"data": {
+					"title": "Odyssea Utama/Cocotinos",
+					"summary": "PT Odyssea Utama, yang mengoperasikan layanan selam di Cocotinos Manado, Kima Bajo, Minahasa Utara.",
+					"services": "Resort selam.",
+					"regions": [
+						"Sulawesi"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.odysseadivers.com/",
+					"email": "info@cocotinos-manado.com",
+					"whatsapp": "+628124308800"
+				}
+			},
+			{
+				"id": "member-ollo-scuba-wakatobi-en",
+				"slug": "ollo-scuba-wakatobi",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Ollo Scuba Wakatobi",
+					"summary": "Dive operator in Wangi-Wangi Selatan, Wakatobi.",
+					"services": "Dive center.",
+					"regions": [
+						"Sulawesi"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-ollo-scuba-wakatobi-id",
+				"slug": "ollo-scuba-wakatobi",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-ollo-scuba-wakatobi-en",
+				"data": {
+					"title": "Ollo Scuba Wakatobi",
+					"summary": "Operator selam di Wangi-Wangi Selatan, Wakatobi.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Sulawesi"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-oseano-scuba-indonesia-en",
+				"slug": "oseano-scuba-indonesia",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Oseano Scuba Indonesia",
+					"summary": "RAID dive center listed on Jalan Dempo, Menteng, Central Jakarta.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-oseano-scuba-indonesia-id",
+				"slug": "oseano-scuba-indonesia",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-oseano-scuba-indonesia-en",
+				"data": {
+					"title": "Oseano Scuba Indonesia",
+					"summary": "Pusat selam RAID yang tercantum di Jalan Dempo, Menteng, Jakarta Pusat.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-oye-selam-indonesia-en",
+				"slug": "oye-selam-indonesia",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Oye Selam Indonesia",
+					"summary": "Jakarta dive community and operator, with a secretariat reported in Cilandak.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-oye-selam-indonesia-id",
+				"slug": "oye-selam-indonesia",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-oye-selam-indonesia-en",
+				"data": {
+					"title": "Oye Selam Indonesia",
+					"summary": "Komunitas dan operator selam di Jakarta, dengan sekretariat yang dilaporkan di Cilandak.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-palika-scuba-karawang-en",
+				"slug": "palika-scuba-karawang",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Palika Scuba Karawang",
+					"summary": "Dive center in Karawang Timur.",
+					"services": "Dive center.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "scubapalika@gmail.com",
+					"whatsapp": "+6281518500487"
+				}
+			},
+			{
+				"id": "member-palika-scuba-karawang-id",
+				"slug": "palika-scuba-karawang",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-palika-scuba-karawang-en",
+				"data": {
+					"title": "Palika Scuba Karawang",
+					"summary": "Pusat selam di Karawang Timur.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "scubapalika@gmail.com",
+					"whatsapp": "+6281518500487"
+				}
+			},
+			{
+				"id": "member-photodive-trip-en",
+				"slug": "photodive-trip",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Photodive Trip",
+					"summary": "PT JIA Group, arranging underwater photography trips.",
+					"services": "Underwater photography trips.",
+					"regions": [
+						"Bali"
+					],
+					"operation_type": "Travel specialist",
+					"featured": false,
+					"website": "https://www.photodivetrip.com/",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/photodive-trip.jpg",
+							"alt": "Photodive Trip",
+							"filename": "photodive-trip.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-photodive-trip-id",
+				"slug": "photodive-trip",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-photodive-trip-en",
+				"data": {
+					"title": "Photodive Trip",
+					"summary": "PT JIA Group, yang menyusun perjalanan fotografi bawah air.",
+					"services": "Perjalanan fotografi bawah air.",
+					"regions": [
+						"Bali"
+					],
+					"operation_type": "Travel specialist",
+					"featured": false,
+					"website": "https://www.photodivetrip.com/",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/photodive-trip.jpg",
+							"alt": "Photodive Trip",
+							"filename": "photodive-trip.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-pinguin-dc-bangka-en",
+				"slug": "pinguin-dc-bangka",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Pinguin DC Bangka",
+					"summary": "Dive center in Tua Tunu, Pangkalpinang, Bangka Belitung.",
+					"services": "Dive center.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "pinguindivecenter@gmail.com"
+				}
+			},
+			{
+				"id": "member-pinguin-dc-bangka-id",
+				"slug": "pinguin-dc-bangka",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-pinguin-dc-bangka-en",
+				"data": {
+					"title": "Pinguin DC Bangka",
+					"summary": "Pusat selam di Tua Tunu, Pangkalpinang, Bangka Belitung.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "pinguindivecenter@gmail.com"
+				}
+			},
+			{
+				"id": "member-pratasaba-resort-en",
+				"slug": "pratasaba-resort",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Pratasaba Resort",
+					"summary": "Dive resort in Payung-Payung, Maratua.",
+					"services": "Dive resort.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.pratasabaresort.com/"
+				}
+			},
+			{
+				"id": "member-pratasaba-resort-id",
+				"slug": "pratasaba-resort",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-pratasaba-resort-en",
+				"data": {
+					"title": "Pratasaba Resort",
+					"summary": "Resort selam di Payung-Payung, Maratua.",
+					"services": "Resort selam.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.pratasabaresort.com/"
+				}
+			},
+			{
+				"id": "member-priority-diver-en",
+				"slug": "priority-diver",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Priority Diver",
+					"summary": "Dive shop on Jalan Tanjung Duren Raya, West Jakarta.",
+					"services": "Dive shop.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"whatsapp": "+6287855518038"
+				}
+			},
+			{
+				"id": "member-priority-diver-id",
+				"slug": "priority-diver",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-priority-diver-en",
+				"data": {
+					"title": "Priority Diver",
+					"summary": "Toko selam di Jalan Tanjung Duren Raya, Jakarta Barat.",
+					"services": "Toko selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"whatsapp": "+6287855518038"
+				}
+			},
+			{
+				"id": "member-pro-dive-bali-en",
+				"slug": "pro-dive-bali",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Pro Dive Bali",
+					"summary": "PADI dive center on Jalan Rama, Denpasar Selatan.",
+					"services": "Dive center.",
+					"regions": [
+						"Bali"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://prodivebali.com/",
+					"email": "info@prodivebali.com",
+					"whatsapp": "+6281338704422"
+				}
+			},
+			{
+				"id": "member-pro-dive-bali-id",
+				"slug": "pro-dive-bali",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-pro-dive-bali-en",
+				"data": {
+					"title": "Pro Dive Bali",
+					"summary": "Pusat selam PADI di Jalan Rama, Denpasar Selatan.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Bali"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://prodivebali.com/",
+					"email": "info@prodivebali.com",
+					"whatsapp": "+6281338704422"
+				}
+			},
+			{
+				"id": "member-pt-bubbles-indonesia-en",
+				"slug": "pt-bubbles-indonesia",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "PT. Bubbles Indonesia",
+					"summary": "Bubbles Divers, a PADI dive center on Jalan Guru Mughni, Kuningan, South Jakarta.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.bubblesdivecenter.com/",
+					"email": "management@bubblesdivecenter.com",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/pt-bubbles-indonesia.jpg",
+							"alt": "PT. Bubbles Indonesia",
+							"filename": "pt-bubbles-indonesia.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-pt-bubbles-indonesia-id",
+				"slug": "pt-bubbles-indonesia",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-pt-bubbles-indonesia-en",
+				"data": {
+					"title": "PT. Bubbles Indonesia",
+					"summary": "Bubbles Divers, pusat selam PADI di Jalan Guru Mughni, Kuningan, Jakarta Selatan.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.bubblesdivecenter.com/",
+					"email": "management@bubblesdivecenter.com",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/pt-bubbles-indonesia.jpg",
+							"alt": "PT. Bubbles Indonesia",
+							"filename": "pt-bubbles-indonesia.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-raflesia-bengkulu-dc-en",
+				"slug": "raflesia-bengkulu-dc",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Raflesia Bengkulu DC",
+					"summary": "IDCA member listed in Bengkulu. A public dive-center website for this name was not found.",
+					"services": "Dive center.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-raflesia-bengkulu-dc-id",
+				"slug": "raflesia-bengkulu-dc",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-raflesia-bengkulu-dc-en",
+				"data": {
+					"title": "Raflesia Bengkulu DC",
+					"summary": "Anggota IDCA yang tercantum di Bengkulu. Situs pusat selam publik untuk nama ini tidak ditemukan.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-raja-nyelam-en",
+				"slug": "raja-nyelam",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Raja Nyelam",
+					"summary": "SSI instructor-training center in Bekasi Utara.",
+					"services": "Dive training.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.rajanyelam.com/",
+					"email": "info@rajanyelam.com",
+					"whatsapp": "+6281298947986",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/raja-nyelam.png",
+							"alt": "Raja Nyelam",
+							"filename": "raja-nyelam.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-raja-nyelam-id",
+				"slug": "raja-nyelam",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-raja-nyelam-en",
+				"data": {
+					"title": "Raja Nyelam",
+					"summary": "Pusat pelatihan instruktur SSI di Bekasi Utara.",
+					"services": "Pelatihan selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.rajanyelam.com/",
+					"email": "info@rajanyelam.com",
+					"whatsapp": "+6281298947986",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/raja-nyelam.png",
+							"alt": "Raja Nyelam",
+							"filename": "raja-nyelam.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-rekan-dive-center-wakatobi-en",
+				"slug": "rekan-dive-center-wakatobi",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Rekan Dive Center Wakatobi",
+					"summary": "Dive center listed in Mandati, Wangi-Wangi Selatan, Wakatobi.",
+					"services": "Dive center.",
+					"regions": [
+						"Sulawesi"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-rekan-dive-center-wakatobi-id",
+				"slug": "rekan-dive-center-wakatobi",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-rekan-dive-center-wakatobi-en",
+				"data": {
+					"title": "Rekan Dive Center Wakatobi",
+					"summary": "Pusat selam yang tercantum di Mandati, Wangi-Wangi Selatan, Wakatobi.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Sulawesi"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-sailendivers-en",
+				"slug": "sailendivers",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Sailendivers DC/Nagadi Purna",
+					"summary": "PADI dive center in BSD City, South Tangerang.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.sailendiver.com/",
+					"email": "sailendiver@gmail.com",
+					"whatsapp": "+6285215211171"
+				}
+			},
+			{
+				"id": "member-sailendivers-id",
+				"slug": "sailendivers",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-sailendivers-en",
+				"data": {
+					"title": "Sailendivers DC/Nagadi Purna",
+					"summary": "Pusat selam PADI di BSD City, Tangerang Selatan.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.sailendiver.com/",
+					"email": "sailendiver@gmail.com",
+					"whatsapp": "+6285215211171"
+				}
+			},
+			{
+				"id": "member-sea-darling-en",
+				"slug": "sea-darling",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Sea Darling",
+					"summary": "IDCA member. A public website or listing for this name was not found.",
+					"services": "Dive center.",
+					"regions": [],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-sea-darling-id",
+				"slug": "sea-darling",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-sea-darling-en",
+				"data": {
+					"title": "Sea Darling",
+					"summary": "Anggota IDCA. Situs atau cantuman publik untuk nama ini tidak ditemukan.",
+					"services": "Pusat selam.",
+					"regions": [],
+					"operation_type": "Dive resort or center",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-sekolah-diving-bandung-en",
+				"slug": "sekolah-diving-bandung",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Sekolah Diving Bandung",
+					"summary": "Diving school in Bandung. The public site is an older course blog and does not show a current street address.",
+					"services": "Dive training.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://sekolahdivingbandung.com/"
+				}
+			},
+			{
+				"id": "member-sekolah-diving-bandung-id",
+				"slug": "sekolah-diving-bandung",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-sekolah-diving-bandung-en",
+				"data": {
+					"title": "Sekolah Diving Bandung",
+					"summary": "Sekolah selam di Bandung. Situs publiknya adalah blog kursus yang lebih lama dan tidak menampilkan alamat jalan yang masih berlaku.",
+					"services": "Pelatihan selam.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://sekolahdivingbandung.com/"
+				}
+			},
+			{
+				"id": "member-sentra-selam-jogja-en",
+				"slug": "sentra-selam-jogja",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Sentra Selam Jogja",
+					"summary": "POSSI dive center on Jalan Pandega Marta, Sleman, Yogyakarta.",
+					"services": "Dive center.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "selamjogja@yahoo.com",
+					"whatsapp": "+628568894931"
+				}
+			},
+			{
+				"id": "member-sentra-selam-jogja-id",
+				"slug": "sentra-selam-jogja",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-sentra-selam-jogja-en",
+				"data": {
+					"title": "Sentra Selam Jogja",
+					"summary": "Pusat selam POSSI di Jalan Pandega Marta, Sleman, Yogyakarta.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "selamjogja@yahoo.com",
+					"whatsapp": "+628568894931"
+				}
+			},
+			{
+				"id": "member-sightsea-expedition-en",
+				"slug": "sightsea-expedition",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Sightsea Expedition",
+					"summary": "Dive-trip specialist in Seminyak, Bali, including departures on the Velocean liveaboard.",
+					"services": "Dive trips.",
+					"regions": [
+						"Bali",
+						"Raja Ampat",
+						"Banda Sea"
+					],
+					"operation_type": "Travel specialist",
+					"featured": false,
+					"website": "https://www.sightseaexpeditions.com/",
+					"email": "admin@sightseaexpeditions.com",
+					"whatsapp": "+62811301031",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/sightsea-expedition.png",
+							"alt": "Sightsea Expedition",
+							"filename": "sightsea-expedition.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-sightsea-expedition-id",
+				"slug": "sightsea-expedition",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-sightsea-expedition-en",
+				"data": {
+					"title": "Sightsea Expedition",
+					"summary": "Spesialis perjalanan selam di Seminyak, Bali, termasuk keberangkatan di liveaboard Velocean.",
+					"services": "Perjalanan selam.",
+					"regions": [
+						"Bali",
+						"Raja Ampat",
+						"Banda Sea"
+					],
+					"operation_type": "Travel specialist",
+					"featured": false,
+					"website": "https://www.sightseaexpeditions.com/",
+					"email": "admin@sightseaexpeditions.com",
+					"whatsapp": "+62811301031",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/sightsea-expedition.png",
+							"alt": "Sightsea Expedition",
+							"filename": "sightsea-expedition.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-taman-laut-indonesia-en",
+				"slug": "taman-laut-indonesia",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Taman Laut Indonesia",
+					"summary": "Dive and freediving school offering PADI courses.",
+					"services": "Dive training.",
+					"regions": [],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.tamanlautindonesia.com/",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/taman-laut-indonesia.png",
+							"alt": "Taman Laut Indonesia",
+							"filename": "taman-laut-indonesia.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-taman-laut-indonesia-id",
+				"slug": "taman-laut-indonesia",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-taman-laut-indonesia-en",
+				"data": {
+					"title": "Taman Laut Indonesia",
+					"summary": "Sekolah selam dan freediving yang menawarkan kursus PADI.",
+					"services": "Pelatihan selam.",
+					"regions": [],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.tamanlautindonesia.com/",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/taman-laut-indonesia.png",
+							"alt": "Taman Laut Indonesia",
+							"filename": "taman-laut-indonesia.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-tasik-divers-indonesia-en",
+				"slug": "tasik-divers-indonesia",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Tasik Divers Indonesia",
+					"summary": "PADI dive operator. The Manado center is listed on the Trans-Sulawesi road, and the company also runs diving in Derawan.",
+					"services": "Dive center.",
+					"regions": [
+						"Sulawesi"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.tasikria.com/",
+					"email": "daniel@tasikria.com",
+					"whatsapp": "+62811438777"
+				}
+			},
+			{
+				"id": "member-tasik-divers-indonesia-id",
+				"slug": "tasik-divers-indonesia",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-tasik-divers-indonesia-en",
+				"data": {
+					"title": "Tasik Divers Indonesia",
+					"summary": "Operator selam PADI. Pusat Manado tercantum di jalan Trans-Sulawesi, dan perusahaan ini juga menjalankan selam di Derawan.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Sulawesi"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.tasikria.com/",
+					"email": "daniel@tasikria.com",
+					"whatsapp": "+62811438777"
+				}
+			},
+			{
+				"id": "member-toekoe-nyelem-indonesia-en",
+				"slug": "toekoe-nyelem-indonesia",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Toekoe Nyelem Indonesia/Zombie Dive",
+					"summary": "Zombie Marine Dive, an SSI center in Ciganjur, South Jakarta.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "toekoenyelem.indonesia@gmail.com"
+				}
+			},
+			{
+				"id": "member-toekoe-nyelem-indonesia-id",
+				"slug": "toekoe-nyelem-indonesia",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-toekoe-nyelem-indonesia-en",
+				"data": {
+					"title": "Toekoe Nyelem Indonesia/Zombie Dive",
+					"summary": "Zombie Marine Dive, pusat SSI di Ciganjur, Jakarta Selatan.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "toekoenyelem.indonesia@gmail.com"
+				}
+			},
+			{
+				"id": "member-travindo-jaya-bajo-en",
+				"slug": "travindo-jaya-bajo",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Travindo Jaya Bajo",
+					"summary": "PT Travindo Jaya, arranging liveaboard diving with a focus on Bali, Komodo, and Raja Ampat.",
+					"services": "Dive trips.",
+					"regions": [
+						"Komodo",
+						"Bali",
+						"Raja Ampat"
+					],
+					"operation_type": "Travel specialist",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-travindo-jaya-bajo-id",
+				"slug": "travindo-jaya-bajo",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-travindo-jaya-bajo-en",
+				"data": {
+					"title": "Travindo Jaya Bajo",
+					"summary": "PT Travindo Jaya, yang menyusun selam liveaboard dengan fokus di Bali, Komodo, dan Raja Ampat.",
+					"services": "Perjalanan selam.",
+					"regions": [
+						"Komodo",
+						"Bali",
+						"Raja Ampat"
+					],
+					"operation_type": "Travel specialist",
+					"featured": false
+				}
+			},
+			{
+				"id": "member-tribuana-dc-en",
+				"slug": "tribuana-dc",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Tribuana DC",
+					"summary": "SSI dive center in Cijantung, East Jakarta.",
+					"services": "Dive center.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "tribuanadivecenter@gmail.com",
+					"whatsapp": "+6281280395320"
+				}
+			},
+			{
+				"id": "member-tribuana-dc-id",
+				"slug": "tribuana-dc",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-tribuana-dc-en",
+				"data": {
+					"title": "Tribuana DC",
+					"summary": "Pusat selam SSI di Cijantung, Jakarta Timur.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"email": "tribuanadivecenter@gmail.com",
+					"whatsapp": "+6281280395320"
+				}
+			},
+			{
+				"id": "member-velocean-lob-en",
+				"slug": "velocean-lob",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Velocean LOB",
+					"summary": "Liveaboard operating in Raja Ampat, Komodo, the Banda Sea, Alor, Wakatobi, and Triton Bay.",
+					"services": "Liveaboard diving.",
+					"regions": [
+						"Raja Ampat",
+						"Komodo",
+						"Banda Sea"
+					],
+					"operation_type": "Liveaboard",
+					"featured": false,
+					"website": "https://www.veloceanliveaboard.com/",
+					"email": "sales@veloceanliveaboard.com",
+					"whatsapp": "+66842424642",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/velocean-lob.png",
+							"alt": "Velocean LOB",
+							"filename": "velocean-lob.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-velocean-lob-id",
+				"slug": "velocean-lob",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-velocean-lob-en",
+				"data": {
+					"title": "Velocean LOB",
+					"summary": "Liveaboard yang beroperasi di Raja Ampat, Komodo, Laut Banda, Alor, Wakatobi, dan Triton Bay.",
+					"services": "Selam liveaboard.",
+					"regions": [
+						"Raja Ampat",
+						"Komodo",
+						"Banda Sea"
+					],
+					"operation_type": "Liveaboard",
+					"featured": false,
+					"website": "https://www.veloceanliveaboard.com/",
+					"email": "sales@veloceanliveaboard.com",
+					"whatsapp": "+66842424642",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/velocean-lob.png",
+							"alt": "Velocean LOB",
+							"filename": "velocean-lob.png"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-wailino-dive-en",
+				"slug": "wailino-dive",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Wailino Dive",
+					"summary": "Cave-diving and expedition operator in Ciganjur, South Jakarta.",
+					"services": "Dive trips.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.wailinodive.com/"
+				}
+			},
+			{
+				"id": "member-wailino-dive-id",
+				"slug": "wailino-dive",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-wailino-dive-en",
+				"data": {
+					"title": "Wailino Dive",
+					"summary": "Operator selam gua dan ekspedisi di Ciganjur, Jakarta Selatan.",
+					"services": "Perjalanan selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://www.wailinodive.com/"
+				}
+			},
+			{
+				"id": "member-whale-dive-center-en",
+				"slug": "whale-dive-center",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Whale Dive Center",
+					"summary": "Whale Dive Centre in Kebayoran Lama, South Jakarta, a NAUI training base.",
+					"services": "Dive training.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://whaledivecentre.com/",
+					"email": "info@whaledivecentre.com",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/whale-dive-center.jpg",
+							"alt": "Whale Dive Center",
+							"filename": "whale-dive-center.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-whale-dive-center-id",
+				"slug": "whale-dive-center",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-whale-dive-center-en",
+				"data": {
+					"title": "Whale Dive Center",
+					"summary": "Whale Dive Centre di Kebayoran Lama, Jakarta Selatan, basis pelatihan NAUI.",
+					"services": "Pelatihan selam.",
+					"regions": [
+						"Jabodetabek"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"website": "https://whaledivecentre.com/",
+					"email": "info@whaledivecentre.com",
+					"featured_image": {
+						"$media": {
+							"file": "media/logos/whale-dive-center.jpg",
+							"alt": "Whale Dive Center",
+							"filename": "whale-dive-center.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-zanclus-dc-en",
+				"slug": "zanclus-dc",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Zanclus DC",
+					"summary": "SSI dive center in Waisai, Raja Ampat.",
+					"services": "Dive center.",
+					"regions": [
+						"Raja Ampat"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"whatsapp": "+6282213121778"
+				}
+			},
+			{
+				"id": "member-zanclus-dc-id",
+				"slug": "zanclus-dc",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-zanclus-dc-en",
+				"data": {
+					"title": "Zanclus DC",
+					"summary": "Pusat selam SSI di Waisai, Raja Ampat.",
+					"services": "Pusat selam.",
+					"regions": [
+						"Raja Ampat"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"whatsapp": "+6282213121778"
 				}
 			}
 		],

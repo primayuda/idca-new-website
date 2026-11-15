@@ -43,7 +43,7 @@ Run this once for local development:
 2. Create the admin account and register a passkey.
 3. Sign in at `/_emdash/admin` to edit members, activities, and news.
 
-Run it once for production too, at `https://idca.primayuda.dev/_emdash/admin/setup`. Passkeys are tied to the domain, so register them on the production address. In the setup wizard, choose to load the sample content.
+Run it once for production too, at `https://idca.primayuda.dev/_emdash/admin/setup`. Passkeys are tied to the domain, so register them on the production address. In the setup wizard, choose to load the seed content. That includes the IDCA member directory and the two news articles.
 
 Photos are uploaded through the admin and stored in R2. If a photo is missing on the live site, check that its file exists in the `idca-media` bucket.
 
@@ -96,8 +96,8 @@ src/
   worker.ts     Cloudflare Worker entry (scheduled publishing and co-editing rooms)
 wrangler.jsonc  Cloudflare Worker, D1, R2, KV, and cron configuration
 .github/        Deploy workflow (.github/workflows/deploy.yml)
-seed/           Initial CMS content (seed.json) and media
-scripts/        build-seed.mjs, which regenerates seed/seed.json
+seed/           Initial CMS content (seed.json), photos (seed/media), and member logos (seed/media/logos)
+scripts/        build-seed.mjs regenerates seed/seed.json. members-data.mjs holds the member directory it reads
 public/         Static assets (logos, photos, favicon)
 ```
 
@@ -106,6 +106,16 @@ public/         Static assets (logos, photos, favicon)
 Members, activities, and news are managed in the EmDash admin, so non-technical staff do not need to edit code. The contact details and copy that are not in the CMS live in `src/lib/site.ts` and `src/lib/copy.ts`.
 
 Member photos and logos are shown whole, scaled to fit inside their frame, so nothing is cropped. Landscape photos fill the 16:10 card best. A square logo appears with empty space on the sides, so upload the largest, cleanest version of a logo.
+
+### Member directory
+
+The directory follows the secretariat's list of 76 members (`IDCA_Member_Logo.xlsx`). Each member's name, region, website, email, and WhatsApp are taken from its own public website or a public directory. Fields that could not be confirmed are left empty. Edit the live directory in the CMS.
+
+- `scripts/members-data.mjs` is the seed source for these listings. Changing it does not change the live site. Run `node scripts/build-seed.mjs` to regenerate `seed/seed.json` for new setups.
+- `seed/media/logos/` holds the 23 logos that were found publicly. A member without a logo has no image in the directory until one is uploaded in the CMS.
+- Two members have no public source yet and are marked as such in the directory: Idea Mandiri Perkasa and Sea Darling. Replace their entries with confirmed details when the secretariat provides them.
+- Raflesia Bengkulu DC and Derawan Indonesia Indah also lack a confirmed public website. Maratua DC & Lodge is not tied to one website because several resorts on Maratua use similar names.
+- Do not copy scraped course prices into the directory. Keep only facts the member has published or confirmed.
 
 Member regions (Raja Ampat, Komodo, Bali, Sulawesi, Banda Sea, Jabodetabek, Other regions) are a select field on the members collection. To add a region, add it to that field in the CMS and to `regionOptions` in `src/lib/locale.ts`, with an Indonesian label in `regionId`. The same list is kept in `scripts/build-seed.mjs` and `seed/seed.json` for new setups.
 
