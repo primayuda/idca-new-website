@@ -1,15 +1,15 @@
-import node from "@astrojs/node";
+import cloudflare from "@astrojs/cloudflare";
 import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
+import { d1, r2 } from "@emdash-cms/cloudflare";
 import { defineConfig } from "astro/config";
-import emdash, { local } from "emdash/astro";
-import { sqlite } from "emdash/db";
+import emdash from "emdash/astro";
 import { fileURLToPath } from "node:url";
 
 export default defineConfig({
 	output: "server",
-	site: "https://diveindonesia.org",
-	adapter: node({ mode: "standalone" }),
+	site: "https://idca.primayuda.dev",
+	adapter: cloudflare(),
 	vite: {
 		plugins: [tailwindcss()],
 		resolve: {
@@ -26,11 +26,8 @@ export default defineConfig({
 	integrations: [
 		react(),
 		emdash({
-			database: sqlite({ url: "file:./data.db" }),
-			storage: local({
-				directory: "./uploads",
-				baseUrl: "/_emdash/api/media/file",
-			}),
+			database: d1({ binding: "DB" }),
+			storage: r2({ binding: "MEDIA" }),
 		}),
 	],
 	devToolbar: { enabled: false },

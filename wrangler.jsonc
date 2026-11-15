@@ -1,0 +1,32 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "idca-website",
+	"main": "./src/worker.ts",
+	"compatibility_date": "2026-11-15",
+	"compatibility_flags": ["nodejs_compat"],
+	"workers_dev": false,
+	"routes": [{ "pattern": "idca.primayuda.dev", "custom_domain": true }],
+	"kv_namespaces": [{ "binding": "SESSION", "id": "7a029c28688a4320862c2d17c0beb163" }],
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "idca-website",
+			"database_id": "ec39320e-7683-4e02-8482-2b90074a7531",
+		},
+	],
+	"r2_buckets": [
+		{
+			"binding": "MEDIA",
+			"bucket_name": "idca-media",
+		},
+	],
+	"durable_objects": {
+		"bindings": [{ "name": "EMDASH_ROOMS", "class_name": "EmDashRoom" }],
+	},
+	"exports": {
+		"EmDashRoom": { "type": "durable-object", "storage": "sqlite" },
+	},
+	"triggers": {
+		"crons": ["* * * * *"],
+	},
+}

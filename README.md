@@ -14,8 +14,8 @@ Website for the Indonesia Divetourism Company Association (IDCA / PUWSI), built 
 
 ## Stack
 
-- **Astro** (server output, Node standalone adapter) for pages and routing
-- **EmDash** CMS for members, activities, and news. Content is stored in SQLite and edited in the admin at `/_emdash/admin`
+- **Astro** (server output, Cloudflare adapter) for pages and routing
+- **EmDash** CMS for members, activities, and news. Production content is stored in Cloudflare D1 and photos in R2. The admin is at `/_emdash/admin`
 - **Tailwind CSS v4** and **shadcn/ui** (`base-nova` style) for styling and components
 - **React** only for the shadcn components that need client behavior
 
@@ -33,7 +33,7 @@ npm run dev
 
 Open `http://localhost:4321`. Use `localhost` rather than `127.0.0.1`, because passkey sign-in in the EmDash admin needs a secure origin.
 
-On first run, the CMS database (`data.db`) is created and the content in `seed/seed.json` is loaded. To load it again manually, run `npx emdash seed`.
+Local development uses a local copy of the D1 database and R2 bucket. The production site is https://idca.primayuda.dev.
 
 ### First-time CMS setup
 
@@ -48,8 +48,15 @@ On first run, the CMS database (`data.db`) is created and the content in `seed/s
 | `npm run dev` | Start the development server |
 | `npm run build` | Build the site into `dist/` |
 | `npm run preview` | Preview the production build |
-| `npm start` | Run the built server from `dist/server/entry.mjs` |
+| `npm run deploy` | Build and deploy to Cloudflare from this machine |
 | `npm run typecheck` | Run `astro check` |
+
+## Deploy
+
+Pushes to `main` build the site and deploy it to https://idca.primayuda.dev through `.github/workflows/deploy.yml`. The workflow needs two repository secrets:
+
+- `CLOUDFLARE_API_TOKEN`: a token created from the **Edit Cloudflare Workers** template, scoped to this account and the `primayuda.dev` zone
+- `CLOUDFLARE_ACCOUNT_ID`: `b52da01e364b9fa39cb2de0df31532a2`
 
 ## Languages
 
@@ -87,6 +94,6 @@ Membership and contact forms do not store submissions. They open the visitor's e
 
 ## Notes
 
-- `.env`, `data.db`, `uploads/`, `dist/`, and `node_modules/` are local and git-ignored.
+- `.env`, `data.db`, `uploads/`, `dist/`, `.wrangler/`, and `node_modules/` are local and git-ignored.
 - The `mockup/` folder holds the original static design files for reference only and is git-ignored.
 - The shadcn CLI is not installed as a dependency. Add new components with `npx shadcn@latest add <component>`. Its base CSS is kept in `src/styles/shadcn.css`.
