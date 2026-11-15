@@ -2,6 +2,16 @@
 
 Website for the Indonesia Divetourism Company Association (IDCA / PUWSI), built with Astro and EmDash. The site is bilingual: English at `/` and Indonesian under `/id`.
 
+## Screenshots
+
+**Laptop (1440 px)**
+
+![IDCA home page on a laptop screen](docs/screenshots/laptop.png)
+
+**Mobile (390 px)**
+
+![IDCA home page on a mobile screen](docs/screenshots/mobile.png)
+
 ## Stack
 
 - **Astro** (server output, Node standalone adapter) for pages and routing
@@ -47,6 +57,11 @@ On first run, the CMS database (`data.db`) is created and the content in `seed/s
 - Indonesian uses the `/id` prefix (`/id/members`).
 - First-time visitors are sent to Indonesian. Their choice is kept in the `idca-locale` cookie, so later visits open in the same language.
 - The old `/en` paths redirect permanently to the unprefixed English paths.
+
+## Themes
+
+- The site opens in dark mode by default.
+- The sun/moon button in the header switches between dark and light. The choice is stored in the `idca-theme` cookie, so it is kept on later visits.
 
 ## Project layout
 

@@ -20,6 +20,9 @@ const fullTitle = title.startsWith("IDCA") ? title : `${title} — IDCA`;
 <!doctype html>
 <html lang={locale}>
 	<head>
+		<script is:inline>
+			document.documentElement.dataset.theme = /(?:^|; )idca-theme=light(?:;|$)/.test(document.cookie) ? "light" : "dark";
+		</script>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>{fullTitle}</title>

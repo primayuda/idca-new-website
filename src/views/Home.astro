@@ -42,7 +42,7 @@ const title = locale === "id" ? "IDCA — Perkumpulan Usaha Wisata Selam Indones
 					<h1 class="mt-4 font-display text-[2.55rem] leading-[1.05] text-balance sm:text-5xl">{c.hero.title}</h1>
 					<p class="mt-5 text-base leading-relaxed text-sand">{c.hero.lede}</p>
 					<div class="mt-8 flex flex-wrap gap-3">
-						<a href={localePath(locale, "/membership")} class={buttonVariants({ variant: "secondary", className: "h-12 bg-white px-5 text-primary hover:bg-white/90" })}>{c.hero.join}</a>
+						<a href={localePath(locale, "/membership")} class={buttonVariants({ variant: "white", className: "h-12 px-5" })}>{c.hero.join}</a>
 						<a href={localePath(locale, "/login")} class={buttonVariants({ variant: "outline", className: "h-12 border-white/50 bg-transparent px-5 text-white hover:bg-white/15 hover:text-white" })}>{c.hero.login}</a>
 					</div>
 					<ul class="mt-10 border-y border-white/15">
@@ -215,7 +215,7 @@ const title = locale === "id" ? "IDCA — Perkumpulan Usaha Wisata Selam Indones
 				<h2 class="font-display text-4xl leading-tight">{c.joinBand.title}</h2>
 				<p class="mt-4 leading-relaxed text-sand">{c.joinBand.body}</p>
 			</div>
-			<a href={localePath(locale, "/membership")} class={buttonVariants({ variant: "secondary", className: "h-12 shrink-0 bg-white px-5 text-primary hover:bg-white/90" })}>{c.joinBand.cta}</a>
+			<a href={localePath(locale, "/membership")} class={buttonVariants({ variant: "white", className: "h-12 shrink-0 px-5" })}>{c.joinBand.cta}</a>
 		</div>
 	</section>
 </Base>

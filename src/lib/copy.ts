@@ -3,6 +3,8 @@ import type { Locale } from "./locale";
 export const copy = {
 	en: {
 		skip: "Skip to content",
+		themeToLight: "Switch to light theme",
+		themeToDark: "Switch to dark theme",
 		openMenu: "Open menu",
 		closeMenu: "Close menu",
 		language: "Language",
@@ -213,6 +215,8 @@ export const copy = {
 	},
 	id: {
 		skip: "Lewati ke isi",
+		themeToLight: "Ganti ke tema terang",
+		themeToDark: "Ganti ke tema gelap",
 		openMenu: "Buka menu",
 		closeMenu: "Tutup menu",
 		language: "Bahasa",

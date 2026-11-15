@@ -5,17 +5,47 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Applied before paint so the first visit renders dark without a flash. */
+html:not([data-theme="light"]) {
+	color-scheme: dark;
+	--ink: #e5e7eb;
+	--foam: #1e1b4b;
+	--paper: #0f1220;
+	--line: rgb(255 255 255 / 14%);
+	--reef: #818cf8;
+	--reef-bright: #a5b4fc;
+	--brand-from: #1e3a8a;
+	--brand-to: #581c87;
+	--background: #0f1220;
+	--foreground: #e5e7eb;
+	--card: #1a1e30;
+	--card-foreground: #e5e7eb;
+	--popover: #1a1e30;
+	--popover-foreground: #e5e7eb;
+	--primary: #818cf8;
+	--primary-foreground: #0f1220;
+	--secondary: #312e81;
+	--secondary-foreground: #e0e7ff;
+	--muted: #1e1b4b;
+	--muted-foreground: #c7d2fe;
+	--accent: #312e81;
+	--accent-foreground: #e0e7ff;
+	--border: rgb(255 255 255 / 14%);
+	--input: rgb(255 255 255 / 22%);
+	--ring: #818cf8;
+}
+
 @theme inline {
 	--font-sans: 'Geist Variable', sans-serif;
 	--font-display: "Fraunces", Georgia, "Times New Roman", serif;
-	--color-ink: #111827;
+	--color-ink: var(--ink);
 	--color-sea: #312e81;
-	--color-foam: #eef2ff;
-	--color-paper: #ffffff;
+	--color-foam: var(--foam);
+	--color-paper: var(--paper);
 	--color-sand: #e0e7ff;
-	--color-reef: #4f46e5;
-	--color-reef-bright: #4338ca;
-	--color-line: #e5e7eb;
+	--color-reef: var(--reef);
+	--color-reef-bright: var(--reef-bright);
+	--color-line: var(--line);
 	--color-danger: #dc2626;
 	--color-flag: #ef4444;
 	--color-muted: var(--muted);
@@ -61,7 +91,7 @@
 }
 
 .bg-brand {
-	background-image: linear-gradient(to right, #3b82f6, #9333ea);
+	background-image: linear-gradient(to right, var(--brand-from), var(--brand-to));
 }
 
 html {
@@ -81,15 +111,21 @@ body {
 	text-rendering: optimizeLegibility;
 }
 
+h1,
+h2,
+h3 {
+	color: var(--color-ink);
+}
+
 ::selection {
 	background: #4f46e5;
 	color: #ffffff;
 }
 
 :focus-visible {
-	outline: 2px solid #4f46e5;
+	outline: 2px solid var(--color-reef);
 	outline-offset: 2px;
-	box-shadow: 0 0 0 4px #ffffff;
+	box-shadow: 0 0 0 4px var(--color-paper);
 }
 
 .emdash-image,
@@ -116,9 +152,9 @@ body {
 }
 
 .article-body blockquote {
-	border: 1px solid #c7d2fe;
+	border: 1px solid color-mix(in srgb, var(--color-reef) 45%, transparent);
 	border-radius: 1rem;
-	background: #eef2ff;
+	background: var(--color-foam);
 	padding: 1.25rem 1.5rem;
 	font-family: var(--font-display);
 	font-size: 1.5rem;
@@ -144,7 +180,7 @@ body {
 
 :is(input, textarea, select):user-invalid {
 	border-color: var(--destructive);
-	background-color: #fef2f2;
+	background-color: color-mix(in srgb, var(--destructive) 12%, transparent);
 }
 
 :is(input, textarea, select):user-invalid ~ .field-error {
@@ -172,13 +208,13 @@ body {
 .brand-select::picker(select) {
 	border: 1px solid var(--border);
 	border-radius: var(--radius-lg);
-	background: #ffffff;
+	background: var(--color-paper);
 	padding: 0.25rem;
-	color: #111827;
+	color: var(--color-ink);
 }
 
 .brand-select::picker-icon {
-	color: #4f46e5;
+	color: var(--color-reef);
 }
 
 .brand-select option {
@@ -189,14 +225,22 @@ body {
 
 .brand-select option:hover,
 .brand-select option:focus-visible {
-	background: #eef2ff;
+	background: var(--color-foam);
 }
 
 .brand-select option::checkmark {
-	color: #4f46e5;
+	color: var(--color-reef);
 }
 
 :root {
+	--ink: #111827;
+	--foam: #eef2ff;
+	--paper: #ffffff;
+	--line: #e5e7eb;
+	--reef: #4f46e5;
+	--reef-bright: #4338ca;
+	--brand-from: #3b82f6;
+	--brand-to: #9333ea;
 	--background: oklch(1 0 0);
 	--foreground: oklch(0.145 0 0);
 	--card: oklch(1 0 0);
