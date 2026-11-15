@@ -34,7 +34,7 @@ const email = typeof entry.data.email === "string" ? entry.data.email : "";
 				{entry.data.services && (
 					<>
 						<h2 class="mt-10 font-display text-3xl">{c.profile.services}</h2>
-						<p class="mt-4 max-w-2xl leading-relaxed text-muted">{entry.data.services}</p>
+						<p class="mt-4 max-w-2xl leading-relaxed text-muted-foreground">{entry.data.services}</p>
 					</>
 				)}
 			</div>
@@ -42,33 +42,33 @@ const email = typeof entry.data.email === "string" ? entry.data.email : "";
 				<h2 class="font-display text-2xl">{c.profile.info}</h2>
 				<dl class="mt-4 space-y-3 text-sm">
 					<div>
-						<dt class="text-muted">{c.profile.type}</dt>
+						<dt class="text-muted-foreground">{c.profile.type}</dt>
 						<dd class="font-medium">{labelFor(locale, str(entry.data.operation_type), "type")}</dd>
 					</div>
 					<div>
-						<dt class="text-muted">{c.profile.region}</dt>
+						<dt class="text-muted-foreground">{c.profile.region}</dt>
 						<dd class="font-medium">{regionList(locale, entry.data.regions)}</dd>
 					</div>
 					{website && (
 						<div>
-							<dt class="text-muted">{c.profile.website}</dt>
+							<dt class="text-muted-foreground">{c.profile.website}</dt>
 							<dd><a class="font-medium text-reef underline underline-offset-4" href={website}>{website.replace(/^https?:\/\//, "")}</a></dd>
 						</div>
 					)}
 					{email && (
 						<div>
-							<dt class="text-muted">{c.profile.email}</dt>
+							<dt class="text-muted-foreground">{c.profile.email}</dt>
 							<dd><a class="font-medium text-reef underline underline-offset-4" href={`mailto:${email}`}>{email}</a></dd>
 						</div>
 					)}
 					{whatsapp && (
 						<div>
-							<dt class="text-muted">{c.profile.whatsapp}</dt>
+							<dt class="text-muted-foreground">{c.profile.whatsapp}</dt>
 							<dd><a class="font-medium text-reef underline underline-offset-4" href={`https://wa.me/${whatsapp}`}>{entry.data.whatsapp}</a></dd>
 						</div>
 					)}
 				</dl>
-				{!website && !email && !whatsapp && <p class="mt-5 text-sm leading-relaxed text-muted">{c.profile.note}</p>}
+				{!website && !email && !whatsapp && <p class="mt-5 text-sm leading-relaxed text-muted-foreground">{c.profile.note}</p>}
 				<a href={localePath(locale, "/members")} class="mt-5 inline-flex min-h-11 items-center text-sm font-semibold text-reef underline underline-offset-4">{c.profile.back}</a>
 			</aside>
 		</div>

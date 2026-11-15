@@ -23,13 +23,13 @@ const { entries } = await getEmDashCollection("activities", {
 	<div class="mx-auto max-w-6xl px-5 py-12">
 		{
 			entries.length === 0 ? (
-				<p class="text-muted">{c.newsHome.empty}</p>
+				<p class="text-muted-foreground">{c.newsHome.empty}</p>
 			) : (
 				<ul class="divide-y divide-line border-y border-line">
 					{entries.map((article) => (
 						<li>
 							<a href={localePath(locale, `/news/${article.data.slug}`)} class="group grid gap-5 py-6 sm:grid-cols-[180px_minmax(0,1fr)] sm:items-center">
-								<span class="relative block aspect-[16/10] overflow-hidden bg-foam">
+								<span class="relative block aspect-[16/10] overflow-hidden rounded-2xl bg-foam">
 									{img(article.data.featured_image) && <Image image={img(article.data.featured_image)} alt="" class="h-full w-full object-cover" />}
 								</span>
 								<span>
@@ -37,7 +37,7 @@ const { entries } = await getEmDashCollection("activities", {
 										{labelFor(locale, str(article.data.category), "category")} · {formatDate(locale, article.data.event_date)}
 									</span>
 									<span class="mt-2 block font-display text-3xl leading-tight group-hover:text-reef">{article.data.title}</span>
-									<span class="mt-2 block max-w-2xl leading-relaxed text-muted">{article.data.excerpt}</span>
+									<span class="mt-2 block max-w-2xl leading-relaxed text-muted-foreground">{article.data.excerpt}</span>
 								</span>
 							</a>
 						</li>

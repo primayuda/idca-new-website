@@ -1,4 +1,7 @@
 ---
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import MailForm from "../components/MailForm.astro";
 import PageHeader from "../components/PageHeader.astro";
 import Base from "../layouts/Base.astro";
@@ -11,7 +14,7 @@ interface Props {
 }
 const { locale } = Astro.props;
 const c = ui(locale);
-const field = "w-full min-h-11 border border-line bg-paper px-3 text-base";
+const control = "h-12 bg-background text-base md:text-base";
 ---
 
 <Base locale={locale} title={c.contact.title} description={c.contact.lede}>
@@ -35,25 +38,33 @@ const field = "w-full min-h-11 border border-line bg-paper px-3 text-base";
 				<p class="mt-2">{site.pressName}<br /><a class="underline underline-offset-4" href="tel:+6281281197303">{site.pressPhone}</a></p>
 			</div>
 		</address>
-		<section class="border border-line bg-foam p-5 sm:p-6">
+		<section class="rounded-xl bg-card p-5 text-card-foreground ring-1 ring-foreground/10 sm:p-6">
 			<h2 class="font-display text-3xl">{c.contact.formTitle}</h2>
 			<div class="mt-6">
 				<MailForm subject={locale === "id" ? "Pesan untuk sekretariat IDCA" : "Message for the IDCA secretariat"} status={c.contact.status} submit={c.contact.submit} required={c.contact.required} emailInvalid={c.contact.emailInvalid}>
-					<label class="block text-sm font-medium" for="name">{c.contact.name}</label>
-					<input id="name" name={c.contact.name} required class={field} />
-					<p class="text-sm text-danger" data-error-for="name"></p>
-					<label class="block text-sm font-medium" for="email">{c.contact.email}</label>
-					<input id="email" name={c.contact.email} type="email" required autocomplete="email" class={field} />
-					<p class="text-sm text-danger" data-error-for="email"></p>
-					<label class="block text-sm font-medium" for="topic">{c.contact.topic}</label>
-					<select id="topic" name={c.contact.topic} required class={field}>
-						<option value="">{c.membership.choose}</option>
-						{c.contact.topics.map((topic) => <option value={topic}>{topic}</option>)}
-					</select>
-					<p class="text-sm text-danger" data-error-for="topic"></p>
-					<label class="block text-sm font-medium" for="message">{c.contact.message}</label>
-					<textarea id="message" name={c.contact.message} required rows="5" class={`${field} min-h-32 py-2`}></textarea>
-					<p class="text-sm text-danger" data-error-for="message"></p>
+					<div>
+						<Label className="mb-1.5" htmlFor="name">{c.contact.name}</Label>
+						<Input id="name" name={c.contact.name} required autoComplete="name" className={control} />
+						<p id="name-error" class="field-error"><span class="sr-only">Error.</span> <span data-error-text></span></p>
+					</div>
+					<div>
+						<Label className="mb-1.5" htmlFor="email">{c.contact.email}</Label>
+						<Input id="email" name={c.contact.email} type="email" required autoComplete="email" className={control} />
+						<p id="email-error" class="field-error"><span class="sr-only">Error.</span> <span data-error-text></span></p>
+					</div>
+					<div>
+						<Label className="mb-1.5" htmlFor="topic">{c.contact.topic}</Label>
+						<select id="topic" name={c.contact.topic} required class="brand-select bg-background">
+							<option value="">{c.membership.choose}</option>
+							{c.contact.topics.map((topic) => <option value={topic}>{topic}</option>)}
+						</select>
+						<p id="topic-error" class="field-error"><span class="sr-only">Error.</span> <span data-error-text></span></p>
+					</div>
+					<div>
+						<Label className="mb-1.5" htmlFor="message">{c.contact.message}</Label>
+						<Textarea id="message" name={c.contact.message} required rows={5} className="min-h-32 bg-background text-base md:text-base" />
+						<p id="message-error" class="field-error"><span class="sr-only">Error.</span> <span data-error-text></span></p>
+					</div>
 				</MailForm>
 			</div>
 		</section>

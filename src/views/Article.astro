@@ -29,12 +29,12 @@ const downloads =
 				{labelFor(locale, str(entry.data.category), "category")} · {formatDate(locale, entry.data.event_date)}
 			</p>
 			<h1 class="mt-3 font-display text-4xl leading-[1.1] text-balance sm:text-5xl">{entry.data.title}</h1>
-			{entry.data.excerpt && <p class="mt-5 text-lg leading-relaxed text-muted">{entry.data.excerpt}</p>}
+			{entry.data.excerpt && <p class="mt-5 text-lg leading-relaxed text-muted-foreground">{entry.data.excerpt}</p>}
 		</header>
 		{
 			image && (
 				<figure class="mx-auto mt-8 max-w-5xl px-5">
-					<div class="relative aspect-[16/8] overflow-hidden">
+					<div class="relative aspect-[16/8] overflow-hidden rounded-2xl">
 						<Image image={image} priority class="h-full w-full object-cover" />
 					</div>
 				</figure>

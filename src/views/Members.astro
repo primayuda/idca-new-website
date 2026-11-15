@@ -1,6 +1,9 @@
 ---
 import { getEmDashCollection } from "emdash";
-import { Image } from "emdash/ui";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { MemberCard } from "../components/MemberCard";
 import PageHeader from "../components/PageHeader.astro";
 import Base from "../layouts/Base.astro";
 import { ui } from "../lib/copy";
@@ -13,49 +16,59 @@ interface Props {
 const { locale } = Astro.props;
 const c = ui(locale);
 const { entries } = await getEmDashCollection("members", { locale, orderBy: { title: "asc" } });
+
+function cardImage(value: unknown) {
+	const image = img(value);
+	if (!image) return { src: undefined, alt: undefined };
+	const storageKey =
+		image && typeof image === "object" && "meta" in image && image.meta && typeof image.meta === "object" && "storageKey" in image.meta
+			? String(image.meta.storageKey ?? "")
+			: "";
+	const resolve = Astro.locals.emdash?.getPublicMediaUrl;
+	const src = image.src || (storageKey ? (resolve ? resolve(storageKey) : `/_emdash/api/media/file/${storageKey}`) : image.id ? `/_emdash/api/media/file/${image.id}` : undefined);
+	return { src, alt: image.alt };
+}
 ---
 
 <Base locale={locale} title={c.directory.title} description={c.directory.lede}>
 	<PageHeader eyebrow={c.nav.members} title={c.directory.title} lede={c.directory.lede} />
 	<div class="mx-auto max-w-6xl px-5 py-12">
-		<form class="grid gap-4 border border-line bg-foam p-4 sm:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)] sm:items-end" role="search" data-directory>
+		<form class="grid gap-4 rounded-xl bg-muted p-4 ring-1 ring-foreground/10 sm:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)] sm:items-end" role="search" data-directory>
 			<div>
-				<label for="member-search" class="mb-1.5 block text-sm font-medium">{c.directory.searchLabel}</label>
-				<input id="member-search" type="search" placeholder={c.directory.searchPlaceholder} class="w-full min-h-11 border border-line bg-paper px-3 text-base" />
+				<Label className="mb-1.5" htmlFor="member-search">{c.directory.searchLabel}</Label>
+				<Input id="member-search" type="search" placeholder={c.directory.searchPlaceholder} className="h-12 bg-background text-base md:text-base" />
 			</div>
 			<div>
-				<label for="member-region" class="mb-1.5 block text-sm font-medium">{c.directory.regionLabel}</label>
-				<select id="member-region" class="w-full min-h-11 border border-line bg-paper px-3 text-base">
+				<Label className="mb-1.5" htmlFor="member-region">{c.directory.regionLabel}</Label>
+				<select id="member-region" class="brand-select bg-background">
 					<option value="">{c.directory.allRegions}</option>
 					{regionOptions.map((region) => <option value={region}>{labelFor(locale, region, "region")}</option>)}
 				</select>
 			</div>
 			<div>
-				<label for="member-type" class="mb-1.5 block text-sm font-medium">{c.directory.typeLabel}</label>
-				<select id="member-type" class="w-full min-h-11 border border-line bg-paper px-3 text-base">
+				<Label className="mb-1.5" htmlFor="member-type">{c.directory.typeLabel}</Label>
+				<select id="member-type" class="brand-select bg-background">
 					<option value="">{c.directory.allTypes}</option>
 					{typeOptions.map((type) => <option value={type}>{labelFor(locale, type, "type")}</option>)}
 				</select>
 			</div>
 		</form>
-		<p class="mt-6 text-sm text-muted" data-count>{c.directory.count(entries.length)}</p>
+		<p class="mt-6 text-sm text-muted-foreground" data-count>{c.directory.count(entries.length)}</p>
 		<ul class="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-list>
 			{
 				entries.map((member) => {
 					const regions = Array.isArray(member.data.regions) ? member.data.regions.join("|") : "";
 					return (
 						<li data-name={String(member.data.title).toLowerCase()} data-regions={regions} data-type={String(member.data.operation_type ?? "")}>
-							<a href={localePath(locale, `/members/${member.data.slug}`)} class="group flex h-full flex-col border border-line bg-paper">
-								<div class="relative aspect-[16/10] overflow-hidden bg-foam">
-									{img(member.data.featured_image) && <Image image={img(member.data.featured_image)} class="h-full w-full object-cover" />}
-								</div>
-								<div class="flex flex-1 flex-col p-4">
-									<h2 class="font-display text-2xl leading-tight group-hover:text-reef">{member.data.title}</h2>
-									<p class="mt-2 text-sm font-medium text-reef">{regionList(locale, member.data.regions)}</p>
-									<p class="mt-1 text-sm text-muted">{labelFor(locale, str(member.data.operation_type), "type")}</p>
-									<span class="mt-4 text-sm font-semibold">{c.directory.viewProfile}</span>
-								</div>
-							</a>
+							<MemberCard
+								href={localePath(locale, `/members/${member.data.slug}`)}
+								title={str(member.data.title) ?? ""}
+								regions={regionList(locale, member.data.regions)}
+								type={labelFor(locale, str(member.data.operation_type), "type")}
+								imageSrc={cardImage(member.data.featured_image).src}
+								imageAlt={cardImage(member.data.featured_image).alt}
+								view={c.directory.viewProfile}
+							/>
 						</li>
 					);
 				})
@@ -63,8 +76,8 @@ const { entries } = await getEmDashCollection("members", { locale, orderBy: { ti
 		</ul>
 		<div class="mt-6 hidden border border-dashed border-line px-6 py-14 text-center" data-empty>
 			<h2 class="font-display text-3xl">{c.directory.emptyTitle}</h2>
-			<p class="mx-auto mt-3 max-w-md text-muted">{c.directory.emptyBody}</p>
-			<button type="button" class="mt-6 inline-flex min-h-11 items-center bg-ink px-4 text-sm font-semibold text-paper" data-clear>{c.directory.clear}</button>
+			<p class="mx-auto mt-3 max-w-md text-muted-foreground">{c.directory.emptyBody}</p>
+			<Button type="button" className="mt-6 h-12 px-5" data-clear>{c.directory.clear}</Button>
 		</div>
 	</div>
 </Base>

@@ -25,9 +25,10 @@ const fullTitle = title.startsWith("IDCA") ? title : `${title} — IDCA`;
 		<title>{fullTitle}</title>
 		{description && <meta name="description" content={description} />}
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<meta name="theme-color" content="#4F46E5" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />
 	</head>
 	<body class="min-h-screen bg-paper font-sans text-ink antialiased">
 		<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:bg-paper focus:px-4 focus:py-2">
@@ -38,9 +39,8 @@ const fullTitle = title.startsWith("IDCA") ? title : `${title} — IDCA`;
 			<slot />
 		</main>
 		<Footer locale={locale} />
-		<a href={whatsappHref} aria-label={c.whatsapp} class="fixed right-5 bottom-5 z-30 hidden min-h-11 items-center gap-2 bg-[#1fa855] px-4 text-sm font-semibold text-white hover:bg-[#188a46] lg:inline-flex">
-			<Icons name="whatsapp" class="h-5 w-5" />
-			<span aria-hidden="true">WhatsApp</span>
+		<a href={whatsappHref} aria-label={c.whatsapp} class="fixed right-5 bottom-5 z-30 hidden size-14 items-center justify-center rounded-full bg-[#22c55e] text-white shadow-lg transition-colors hover:bg-[#16a34a] focus-visible:ring-4 lg:inline-flex">
+			<Icons name="whatsapp" class="size-7" />
 		</a>
 	</body>
 </html>

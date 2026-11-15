@@ -1,4 +1,6 @@
 ---
+import { Button } from "@/components/ui/button";
+
 interface Props {
 	subject: string;
 	status: string;
@@ -9,44 +11,98 @@ interface Props {
 const { subject, status, submit, required, emailInvalid } = Astro.props;
 ---
 
-<form class="space-y-4" novalidate data-mail-form data-subject={subject} data-status={status} data-required={required} data-email-invalid={emailInvalid}>
+<form class="space-y-4" data-mail-form data-subject={subject} data-status={status} data-required={required} data-email-invalid={emailInvalid}>
 	<slot />
-	<button type="submit" class="inline-flex min-h-11 items-center bg-reef px-5 text-sm font-semibold text-paper hover:bg-reef-bright">{submit}</button>
+	<Button type="submit" className="h-12 px-5">{submit}</Button>
 	<p class="hidden text-sm leading-relaxed" data-mail-status role="status"></p>
 </form>
 
 <script>
-	const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	function isField(value: EventTarget | null): value is HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement {
+		return value instanceof HTMLInputElement || value instanceof HTMLTextAreaElement || value instanceof HTMLSelectElement;
+	}
+
 	for (const form of document.querySelectorAll<HTMLFormElement>("[data-mail-form]")) {
+		const fields = () => [...form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>("input, textarea, select")];
+
+		const messageFor = (field: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement) => {
+			if (field.validity.valueMissing) return form.dataset.required ?? "";
+			if (field.validity.typeMismatch) return form.dataset.emailInvalid ?? "";
+			return "";
+		};
+
+		const sync = (field: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement) => {
+			const box = field.parentElement?.querySelector<HTMLElement>(".field-error");
+			const text = box?.querySelector<HTMLElement>("[data-error-text]");
+			field.setCustomValidity("");
+			const message = messageFor(field);
+			if (message) field.setCustomValidity(message);
+			const show = field.dataset.touched === "true" && !field.validity.valid;
+			if (text) text.textContent = show ? message : "";
+			if (show && box) {
+				field.setAttribute("aria-invalid", "true");
+				field.setAttribute("aria-describedby", box.id);
+			} else {
+				field.removeAttribute("aria-invalid");
+				field.removeAttribute("aria-describedby");
+			}
+		};
+
+		form.addEventListener(
+			"invalid",
+			(event) => {
+				event.preventDefault();
+				if (!isField(event.target) || form.dataset.reported === "true") return;
+				form.dataset.reported = "true";
+				let first: HTMLElement | null = null;
+				for (const field of fields()) {
+					field.dataset.touched = "true";
+					sync(field);
+					if (!field.validity.valid && !first) first = field;
+				}
+				first?.focus();
+				setTimeout(() => {
+					delete form.dataset.reported;
+				}, 0);
+			},
+			true,
+		);
+
+		form.addEventListener("input", (event) => {
+			if (!isField(event.target)) return;
+			event.target.dataset.touched = "true";
+			event.target.setCustomValidity("");
+			if (event.target.validity.valid) sync(event.target);
+		});
+
+		form.addEventListener("focusout", (event) => {
+			if (!isField(event.target) || event.target.dataset.touched !== "true") return;
+			sync(event.target);
+		});
+
 		form.addEventListener("submit", (event) => {
 			event.preventDefault();
-			const status = form.querySelector<HTMLElement>("[data-mail-status]");
-			let valid = true;
-			for (const field of form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>("input, textarea, select")) {
-				const message = form.querySelector<HTMLElement>(`[data-error-for="${field.id}"]`);
-				field.removeAttribute("aria-invalid");
-				if (message) message.textContent = "";
-				const value = field.value.trim();
-				const missing = field.required && !value;
-				const badEmail = field.type === "email" && value !== "" && !emailPattern.test(value);
-				if (missing || badEmail) {
-					valid = false;
-					field.setAttribute("aria-invalid", "true");
-					if (message) message.textContent = badEmail ? (form.dataset.emailInvalid ?? "") : (form.dataset.required ?? "");
-				}
+			let firstInvalid: HTMLElement | null = null;
+			for (const field of fields()) {
+				field.dataset.touched = "true";
+				sync(field);
+				if (!field.validity.valid && !firstInvalid) firstInvalid = field;
 			}
-			if (!valid) {
-				form.querySelector<HTMLElement>("[aria-invalid='true']")?.focus();
+			if (firstInvalid) {
+				firstInvalid.focus();
 				return;
 			}
-			const lines = [...form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>("input, textarea, select")]
+			const lines = fields()
 				.filter((field) => field.name)
 				.map((field) => `${field.name}: ${field.value.trim()}`);
 			const href = `mailto:infopuwsi@gmail.com?subject=${encodeURIComponent(form.dataset.subject ?? "IDCA")}&body=${encodeURIComponent(lines.join("\n"))}`;
+			const status = form.querySelector<HTMLElement>("[data-mail-status]");
+			const submit = form.querySelector<HTMLButtonElement>("[type='submit']");
 			if (status) {
 				status.textContent = form.dataset.status ?? "";
 				status.classList.remove("hidden");
 			}
+			if (submit) submit.disabled = true;
 			window.location.href = href;
 		});
 	}

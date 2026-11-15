@@ -1,4 +1,6 @@
 ---
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import MailForm from "../components/MailForm.astro";
 import PageHeader from "../components/PageHeader.astro";
 import Base from "../layouts/Base.astro";
@@ -16,9 +18,11 @@ const c = ui(locale);
 	<PageHeader eyebrow={c.nav.login} title={c.login.title} lede={c.login.lede} />
 	<div class="mx-auto max-w-xl px-5 py-14">
 		<MailForm subject={c.login.subject} status={c.login.status} submit={c.login.submit} required={c.login.required} emailInvalid={c.login.emailInvalid}>
-			<label class="block text-sm font-medium" for="email">{c.login.email}</label>
-			<input id="email" name={c.login.email} type="email" required autocomplete="email" class="w-full min-h-11 border border-line bg-paper px-3 text-base" />
-			<p class="text-sm text-danger" data-error-for="email"></p>
+			<div>
+				<Label className="mb-1.5" htmlFor="email">{c.login.email}</Label>
+				<Input id="email" name={c.login.email} type="email" required autoComplete="email" className="h-12 bg-background text-base md:text-base" />
+				<p id="email-error" class="field-error"><span class="sr-only">Error.</span> <span data-error-text></span></p>
+			</div>
 		</MailForm>
 	</div>
 </Base>

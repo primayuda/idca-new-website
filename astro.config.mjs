@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 import emdash, { local } from "emdash/astro";
 import { sqlite } from "emdash/db";
+import { fileURLToPath } from "node:url";
 
 export default defineConfig({
 	output: "server",
@@ -11,6 +12,11 @@ export default defineConfig({
 	adapter: node({ mode: "standalone" }),
 	vite: {
 		plugins: [tailwindcss()],
+		resolve: {
+			alias: {
+				"@": fileURLToPath(new URL("./src", import.meta.url)),
+			},
+		},
 	},
 	i18n: {
 		defaultLocale: "en",

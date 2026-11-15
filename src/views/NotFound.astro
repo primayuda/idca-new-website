@@ -1,4 +1,5 @@
 ---
+import { buttonVariants } from "@/components/ui/button";
 import Base from "../layouts/Base.astro";
 import { ui } from "../lib/copy";
 import { localePath, type Locale } from "../lib/locale";
@@ -13,7 +14,7 @@ const c = ui(locale);
 <Base locale={locale} title={c.notFound.title} description={c.notFound.body}>
 	<div class="mx-auto max-w-3xl px-5 py-24">
 		<h1 class="font-display text-5xl leading-tight">{c.notFound.title}</h1>
-		<p class="mt-4 text-lg text-muted">{c.notFound.body}</p>
-		<a href={localePath(locale)} class="mt-8 inline-flex min-h-11 items-center bg-ink px-5 text-sm font-semibold text-paper">{c.notFound.home}</a>
+		<p class="mt-4 text-lg text-muted-foreground">{c.notFound.body}</p>
+		<a href={localePath(locale)} class:list={["mt-8", buttonVariants({ className: "h-12 px-5" })]}>{c.notFound.home}</a>
 	</div>
 </Base>

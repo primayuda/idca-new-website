@@ -1,4 +1,5 @@
 ---
+import { buttonVariants } from "@/components/ui/button";
 import { ui } from "../lib/copy";
 import { barePath, localePath, locales, type Locale } from "../lib/locale";
 import { whatsappHref } from "../lib/site";
@@ -24,9 +25,9 @@ function active(href: string) {
 }
 ---
 
-<header class="sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur-md">
+<header class="sticky top-0 z-40 bg-brand text-white">
 	<div class="mx-auto flex h-18 max-w-6xl items-center gap-3 px-5">
-		<a href={localePath(locale)} class="flex shrink-0 items-center pr-2" aria-label="IDCA — Indonesia Divetourism Company Association">
+		<a href={localePath(locale)} class="flex shrink-0 items-center bg-white px-1.5 py-0.5" aria-label="IDCA — Indonesia Divetourism Company Association">
 			<img src="/brand/logo-mark.png" alt="" width="440" height="260" class="h-auto w-28" />
 		</a>
 		<nav class="ml-auto hidden items-center gap-1 lg:flex" aria-label="IDCA">
@@ -37,7 +38,7 @@ function active(href: string) {
 						aria-current={active(href) ? "page" : undefined}
 						class:list={[
 							"inline-flex min-h-11 items-center border-b-2 px-2.5 text-sm font-medium",
-							active(href) ? "border-reef text-ink" : "border-transparent text-muted hover:text-ink",
+							active(href) ? "border-white text-white" : "border-transparent text-white/80 hover:text-white",
 						]}
 					>
 						{label}
@@ -46,10 +47,10 @@ function active(href: string) {
 			}
 		</nav>
 		<div class="ml-auto flex items-center gap-2 lg:ml-3">
-			<a href={whatsappHref} aria-label={c.whatsapp} class="inline-flex h-11 w-11 items-center justify-center text-[#1fa855] lg:hidden">
+			<a href={whatsappHref} aria-label={c.whatsapp} class="inline-flex size-11 items-center justify-center rounded-full bg-[#22c55e] text-white shadow-md transition-colors hover:bg-[#16a34a] lg:hidden">
 				<Icons name="whatsapp" />
 			</a>
-			<div class="hidden border border-line sm:flex" role="group" aria-label={c.language}>
+			<div class="hidden border border-white/40 sm:flex" role="group" aria-label={c.language}>
 				{
 					locales.map((item) => (
 						<a
@@ -59,7 +60,7 @@ function active(href: string) {
 							aria-current={item === locale ? "true" : undefined}
 							class:list={[
 								"inline-flex min-h-11 min-w-11 items-center justify-center text-xs font-semibold uppercase",
-								item === locale ? "bg-ink text-paper" : "text-ink hover:bg-foam",
+								item === locale ? "bg-white text-reef" : "text-white hover:bg-white/15",
 							]}
 						>
 							{item}
@@ -67,12 +68,12 @@ function active(href: string) {
 					))
 				}
 			</div>
-			<a href={localePath(locale, "/login")} class="hidden min-h-11 items-center bg-reef px-3.5 text-sm font-semibold text-paper hover:bg-reef-bright lg:inline-flex">
+			<a href={localePath(locale, "/login")} class:list={["hidden lg:inline-flex", buttonVariants({ variant: "secondary", className: "h-12 bg-white px-4 text-primary hover:bg-white/90" })]}>
 				{c.nav.login}
 			</a>
 			<button
 				type="button"
-				class="inline-flex h-11 w-11 items-center justify-center lg:hidden"
+				class:list={[buttonVariants({ variant: "ghost", size: "icon", className: "size-12 text-white hover:bg-white/15 hover:text-white lg:hidden" })]}
 				data-menu-button
 				data-open={c.openMenu}
 				data-close={c.closeMenu}
@@ -84,23 +85,23 @@ function active(href: string) {
 			</button>
 		</div>
 	</div>
-	<div id="site-menu" class="hidden border-t border-line bg-paper lg:hidden" data-menu>
+	<div id="site-menu" class="hidden border-t border-white/20 bg-brand lg:hidden" data-menu>
 		<nav class="mx-auto flex max-w-6xl flex-col px-5 py-2" aria-label="IDCA">
 			{
 				links.map(([href, label]) => (
 					<a
 						href={localePath(locale, href)}
 						aria-current={active(href) ? "page" : undefined}
-						class:list={["border-b border-line py-3 text-lg", active(href) ? "text-reef" : "text-ink"]}
+						class:list={["border-b border-white/20 py-3 text-lg text-white", active(href) ? "font-semibold" : "text-white/80"]}
 					>
 						{label}
 					</a>
 				))
 			}
-			<a href={localePath(locale, "/login")} class="mt-4 inline-flex min-h-11 items-center justify-center bg-reef px-4 font-semibold text-paper">
+			<a href={localePath(locale, "/login")} class:list={["mt-4", buttonVariants({ variant: "secondary", className: "h-12 bg-white text-primary hover:bg-white/90" })]}>
 				{c.nav.login}
 			</a>
-			<div class="my-4 flex border border-line" role="group" aria-label={c.language}>
+			<div class="my-4 flex border border-white/40" role="group" aria-label={c.language}>
 				{
 					locales.map((item) => (
 						<a
@@ -110,7 +111,7 @@ function active(href: string) {
 							aria-current={item === locale ? "true" : undefined}
 							class:list={[
 								"inline-flex min-h-11 flex-1 items-center justify-center text-sm font-semibold uppercase",
-								item === locale ? "bg-ink text-paper" : "text-ink",
+								item === locale ? "bg-white text-reef" : "text-white",
 							]}
 						>
 							{item}
