@@ -12,7 +12,7 @@ export interface Member {
   title: string;
   summary?: string;
   services?: string;
-  regions?: ("Raja Ampat" | "Komodo" | "Bali" | "Sulawesi" | "Banda Sea" | "Other regions")[];
+  regions?: ("Raja Ampat" | "Komodo" | "Bali" | "Sulawesi" | "Banda Sea" | "Jabodetabek" | "Other regions")[];
   operation_type?: "Liveaboard" | "Dive resort or center" | "Day-trip operator" | "Travel specialist";
   website?: string;
   email?: string;

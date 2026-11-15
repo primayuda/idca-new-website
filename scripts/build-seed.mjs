@@ -1,6 +1,6 @@
 import { writeFileSync } from "node:fs";
 
-const regions = ["Raja Ampat", "Komodo", "Bali", "Sulawesi", "Banda Sea", "Other regions"];
+const regions = ["Raja Ampat", "Komodo", "Bali", "Sulawesi", "Banda Sea", "Jabodetabek", "Other regions"];
 const types = ["Liveaboard", "Dive resort or center", "Day-trip operator", "Travel specialist"];
 const categories = ["Advocacy", "Association"];
 

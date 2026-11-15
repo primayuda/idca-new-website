@@ -105,6 +105,8 @@ public/         Static assets (logos, photos, favicon)
 
 Members, activities, and news are managed in the EmDash admin, so non-technical staff do not need to edit code. The contact details and copy that are not in the CMS live in `src/lib/site.ts` and `src/lib/copy.ts`.
 
+Member regions (Raja Ampat, Komodo, Bali, Sulawesi, Banda Sea, Jabodetabek, Other regions) are a select field on the members collection. To add a region, add it to that field in the CMS and to `regionOptions` in `src/lib/locale.ts`, with an Indonesian label in `regionId`. The same list is kept in `scripts/build-seed.mjs` and `seed/seed.json` for new setups.
+
 Membership and contact forms do not store submissions. They open the visitor's email app addressed to the IDCA mailbox.
 
 ## Notes

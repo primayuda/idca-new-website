@@ -23,6 +23,7 @@ export const regionOptions = [
 	"Bali",
 	"Sulawesi",
 	"Banda Sea",
+	"Jabodetabek",
 	"Other regions",
 ] as const;
 
@@ -39,6 +40,7 @@ const regionId: Record<string, string> = {
 	Bali: "Bali",
 	Sulawesi: "Sulawesi",
 	"Banda Sea": "Laut Banda",
+	Jabodetabek: "Jabodetabek",
 	"Other regions": "Wilayah lain",
 };
 
