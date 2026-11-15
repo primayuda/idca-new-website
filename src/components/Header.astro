@@ -50,20 +50,22 @@ function active(href: string) {
 			<a href={whatsappHref} aria-label={c.whatsapp} class="inline-flex size-11 items-center justify-center rounded-full bg-[#22c55e] text-white shadow-md transition-colors hover:bg-[#16a34a] lg:hidden">
 				<Icons name="whatsapp" />
 			</a>
-			<div class="hidden border border-white/40 sm:flex" role="group" aria-label={c.language}>
+			<div class="hidden overflow-hidden rounded-full border border-white/40 sm:flex" role="group" aria-label={c.language}>
 				{
 					locales.map((item) => (
 						<a
 							href={`${localePath(item, bare)}${search}`}
 							hreflang={item}
 							lang={item}
+							data-locale={item}
 							aria-current={item === locale ? "true" : undefined}
 							class:list={[
-								"inline-flex min-h-11 min-w-11 items-center justify-center text-xs font-semibold uppercase",
-								item === locale ? "bg-white text-reef" : "text-white hover:bg-white/15",
+								"inline-flex min-h-11 min-w-11 items-center justify-center",
+								item === locale ? "bg-white" : "hover:bg-white/15",
 							]}
 						>
-							{item}
+							<Icons name={item === "en" ? "flag-us" : "flag-id"} class="h-4 w-6 rounded-[2px] shadow-sm ring-1 ring-black/10" />
+							<span class="sr-only">{item === "en" ? "English" : "Bahasa Indonesia"}</span>
 						</a>
 					))
 				}
@@ -101,20 +103,22 @@ function active(href: string) {
 			<a href={localePath(locale, "/login")} class:list={["mt-4", buttonVariants({ variant: "secondary", className: "h-12 bg-white text-primary hover:bg-white/90" })]}>
 				{c.nav.login}
 			</a>
-			<div class="my-4 flex border border-white/40" role="group" aria-label={c.language}>
+			<div class="my-4 flex overflow-hidden rounded-full border border-white/40" role="group" aria-label={c.language}>
 				{
 					locales.map((item) => (
 						<a
 							href={`${localePath(item, bare)}${search}`}
 							hreflang={item}
 							lang={item}
+							data-locale={item}
 							aria-current={item === locale ? "true" : undefined}
 							class:list={[
-								"inline-flex min-h-11 flex-1 items-center justify-center text-sm font-semibold uppercase",
-								item === locale ? "bg-white text-reef" : "text-white",
+								"inline-flex min-h-11 flex-1 items-center justify-center",
+								item === locale ? "bg-white" : "text-white hover:bg-white/15",
 							]}
 						>
-							{item}
+							<Icons name={item === "en" ? "flag-us" : "flag-id"} class="h-4 w-6 rounded-[2px] shadow-sm ring-1 ring-black/10" />
+							<span class="sr-only">{item === "en" ? "English" : "Bahasa Indonesia"}</span>
 						</a>
 					))
 				}
@@ -135,6 +139,12 @@ function active(href: string) {
 		if (label) label.textContent = open ? closeText : openText;
 	}
 	button?.addEventListener("click", () => setOpen(button.getAttribute("aria-expanded") !== "true"));
+	const year = 60 * 60 * 24 * 365;
+	document.querySelectorAll<HTMLAnchorElement>("[data-locale]").forEach((link) => {
+		link.addEventListener("click", () => {
+			document.cookie = `idca-locale=${link.dataset.locale};path=/;max-age=${year};samesite=lax`;
+		});
+	});
 	document.addEventListener("keydown", (event) => {
 		if (event.key === "Escape") setOpen(false);
 	});
