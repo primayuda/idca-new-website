@@ -37,9 +37,15 @@ Local development uses a local copy of the D1 database and R2 bucket. The produc
 
 ### First-time CMS setup
 
+Run this once for local development:
+
 1. Open `http://localhost:4321/_emdash/admin/setup`.
 2. Create the admin account and register a passkey.
 3. Sign in at `/_emdash/admin` to edit members, activities, and news.
+
+Run it once for production too, at `https://idca.primayuda.dev/_emdash/admin/setup`. Passkeys are tied to the domain, so register them on the production address. In the setup wizard, choose to load the sample content.
+
+Photos are uploaded through the admin and stored in R2. If a photo is missing on the live site, check that its file exists in the `idca-media` bucket.
 
 ## Scripts
 
@@ -53,10 +59,16 @@ Local development uses a local copy of the D1 database and R2 bucket. The produc
 
 ## Deploy
 
-Pushes to `main` build the site and deploy it to https://idca.primayuda.dev through `.github/workflows/deploy.yml`. The workflow needs two repository secrets:
+Pushes to `main` build the site and deploy it to https://idca.primayuda.dev through `.github/workflows/deploy.yml`. The run is listed under the repository's **Actions** tab.
+
+The workflow needs two repository secrets:
 
 - `CLOUDFLARE_API_TOKEN`: a token created from the **Edit Cloudflare Workers** template, scoped to this account and the `primayuda.dev` zone
 - `CLOUDFLARE_ACCOUNT_ID`: `b52da01e364b9fa39cb2de0df31532a2`
+
+The Worker is `idca-website` and uses the D1 database `idca-website`, the R2 bucket `idca-media`, a KV session store, and a scheduled task every minute that publishes scheduled items. Its `workers.dev` address is turned off, so the site is reachable only at the custom domain.
+
+To deploy from your own machine instead, sign in once with `npx wrangler login` and run `npm run deploy`.
 
 ## Languages
 
@@ -81,6 +93,9 @@ src/
   pages/        Routes for English (root) and Indonesian (id/)
   views/        Page templates shared by both languages
   styles/       Global CSS and theme tokens
+  worker.ts     Cloudflare Worker entry (scheduled publishing and co-editing rooms)
+wrangler.jsonc  Cloudflare Worker, D1, R2, KV, and cron configuration
+.github/        Deploy workflow (.github/workflows/deploy.yml)
 seed/           Initial CMS content (seed.json) and media
 scripts/        build-seed.mjs, which regenerates seed/seed.json
 public/         Static assets (logos, photos, favicon)
@@ -94,6 +109,6 @@ Membership and contact forms do not store submissions. They open the visitor's e
 
 ## Notes
 
-- `.env`, `data.db`, `uploads/`, `dist/`, `.wrangler/`, and `node_modules/` are local and git-ignored.
+- `.env`, `.wrangler/`, `dist/`, `.dev.vars`, and `node_modules/` are local and git-ignored. Local development data is kept in `.wrangler/`, separate from production.
 - The `mockup/` folder holds the original static design files for reference only and is git-ignored.
 - The shadcn CLI is not installed as a dependency. Add new components with `npx shadcn@latest add <component>`. Its base CSS is kept in `src/styles/shadcn.css`.
