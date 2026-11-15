@@ -1,0 +1,66 @@
+---
+import { Image, PortableText } from "emdash/ui";
+import Base from "../layouts/Base.astro";
+import { ui } from "../lib/copy";
+import type { Activity } from "../../emdash-env";
+import { img, str } from "../lib/fields";
+import { formatDate, labelFor, localePath, type Locale } from "../lib/locale";
+
+interface Props {
+	locale: Locale;
+	entry: { data: Activity };
+}
+const { locale, entry } = Astro.props;
+const c = ui(locale);
+const image = img(entry.data.featured_image);
+const downloads =
+	entry.data.slug === "raja-ampat-open-letter"
+		? [
+				{ href: "https://diveindonesia.org/pdfs/SuratTerbukaRajaAmpat.pdf", label: locale === "id" ? "Surat terbuka (PDF)" : "Open letter (PDF)" },
+				{ href: "https://diveindonesia.org/pdfs/SiaranPers-SuratTerbukaUtkPresidenttgRajaAmpat.pdf", label: locale === "id" ? "Siaran pers (PDF)" : "Press release (PDF)" },
+			]
+		: [];
+---
+
+<Base locale={locale} title={String(entry.data.title)} description={String(entry.data.excerpt ?? "")}>
+	<article class="pb-16">
+		<header class="mx-auto max-w-3xl px-5 pt-14">
+			<p class="text-xs font-semibold uppercase tracking-[0.16em] text-reef">
+				{labelFor(locale, str(entry.data.category), "category")} · {formatDate(locale, entry.data.event_date)}
+			</p>
+			<h1 class="mt-3 font-display text-4xl leading-[1.1] text-balance sm:text-5xl">{entry.data.title}</h1>
+			{entry.data.excerpt && <p class="mt-5 text-lg leading-relaxed text-muted">{entry.data.excerpt}</p>}
+		</header>
+		{
+			image && (
+				<figure class="mx-auto mt-8 max-w-5xl px-5">
+					<div class="relative aspect-[16/8] overflow-hidden">
+						<Image image={image} priority class="h-full w-full object-cover" />
+					</div>
+				</figure>
+			)
+		}
+		<div class="article-body mx-auto mt-10 max-w-3xl px-5 text-lg leading-relaxed">
+			<PortableText value={entry.data.body} />
+			{
+				downloads.length > 0 && (
+					<div class="border-t border-line pt-6">
+						<h2 class="font-display text-2xl">{c.article.downloads}</h2>
+						<ul class="mt-3 flex flex-col gap-2">
+							{downloads.map((file) => (
+								<li>
+									<a href={file.href} class="inline-flex min-h-11 items-center border border-line px-4 text-base font-semibold hover:border-reef" target="_blank" rel="noopener noreferrer">
+										{file.label}
+									</a>
+								</li>
+							))}
+						</ul>
+					</div>
+				)
+			}
+			<p>
+				<a href={localePath(locale, "/news")} class="inline-flex min-h-11 items-center text-sm font-semibold text-reef underline underline-offset-4">← {c.article.back}</a>
+			</p>
+		</div>
+	</article>
+</Base>

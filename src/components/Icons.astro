@@ -1,0 +1,29 @@
+---
+interface Props {
+	name: "whatsapp" | "menu" | "close";
+	class?: string;
+}
+const { name, class: className = "h-6 w-6" } = Astro.props;
+---
+
+{
+	name === "whatsapp" && (
+		<svg viewBox="0 0 24 24" class={className} aria-hidden="true" fill="currentColor">
+			<path d="M12.04 2C6.58 2 2.15 6.4 2.15 11.83c0 1.74.46 3.44 1.34 4.94L2 22l5.39-1.41a10 10 0 0 0 4.65 1.18h.01c5.46 0 9.89-4.4 9.89-9.83C21.94 6.4 17.5 2 12.04 2Zm5.76 13.95c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.81-.11-.41-.14-.95-.31-1.63-.61-2.87-1.24-4.74-4.13-4.88-4.32-.14-.19-1.16-1.54-1.16-2.94s.73-2.08 1-2.37c.24-.27.64-.39 1.02-.39h.37c.12 0 .28-.04.44.34.17.4.57 1.39.62 1.49.05.1.09.22.02.36-.07.14-.1.22-.21.34-.1.12-.22.26-.31.35-.1.1-.21.2-.09.4.12.19.53.87 1.14 1.41.78.7 1.44.91 1.64 1.02.2.1.32.09.44-.05.12-.14.5-.58.63-.78.14-.19.27-.16.46-.1.19.07 1.2.56 1.4.67.2.1.34.15.39.24.05.08.05.73-.19 1.41Z" />
+		</svg>
+	)
+}
+{
+	name === "menu" && (
+		<svg viewBox="0 0 24 24" class={className} fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+			<path d="M4 7h16M4 12h16M4 17h16" />
+		</svg>
+	)
+}
+{
+	name === "close" && (
+		<svg viewBox="0 0 24 24" class={className} fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+			<path d="M6 6l12 12M18 6L6 18" />
+		</svg>
+	)
+}

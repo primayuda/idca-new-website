@@ -1,0 +1,1059 @@
+{
+	"$schema": "https://emdashcms.com/seed.schema.json",
+	"version": "1",
+	"defaultLocale": "en",
+	"meta": {
+		"name": "IDCA",
+		"description": "Indonesia Divetourism Company Association. Seeded operators and articles are placeholders for the secretariat to replace.",
+		"author": "IDCA"
+	},
+	"settings": {
+		"title": "IDCA",
+		"tagline": "Indonesia Divetourism Company Association",
+		"timezone": "Asia/Jakarta",
+		"url": "https://diveindonesia.org"
+	},
+	"collections": [
+		{
+			"slug": "members",
+			"label": "Members",
+			"labelSingular": "Member",
+			"description": "Directory listings. The seeded operators are placeholders — replace them with confirmed member companies.",
+			"urlPattern": "/members/{slug}",
+			"titleField": "title",
+			"supports": [
+				"drafts",
+				"revisions",
+				"preview",
+				"search",
+				"seo"
+			],
+			"sortOrder": 1,
+			"fields": [
+				{
+					"slug": "title",
+					"label": "Company name / Nama perusahaan",
+					"type": "string",
+					"required": true,
+					"searchable": true
+				},
+				{
+					"slug": "summary",
+					"label": "About / Tentang",
+					"type": "text",
+					"searchable": true
+				},
+				{
+					"slug": "services",
+					"label": "Services / Layanan",
+					"type": "text"
+				},
+				{
+					"slug": "regions",
+					"label": "Regions / Wilayah",
+					"type": "multiSelect",
+					"translatable": false,
+					"validation": {
+						"options": [
+							"Raja Ampat",
+							"Komodo",
+							"Bali",
+							"Sulawesi",
+							"Banda Sea",
+							"Other regions"
+						]
+					}
+				},
+				{
+					"slug": "operation_type",
+					"label": "Type of operation / Jenis usaha",
+					"type": "select",
+					"translatable": false,
+					"validation": {
+						"options": [
+							"Liveaboard",
+							"Dive resort or center",
+							"Day-trip operator",
+							"Travel specialist"
+						]
+					}
+				},
+				{
+					"slug": "website",
+					"label": "Website",
+					"type": "url",
+					"translatable": false
+				},
+				{
+					"slug": "email",
+					"label": "Email",
+					"type": "string",
+					"translatable": false
+				},
+				{
+					"slug": "whatsapp",
+					"label": "WhatsApp",
+					"type": "string",
+					"translatable": false
+				},
+				{
+					"slug": "featured_image",
+					"label": "Photo / Foto",
+					"type": "image",
+					"translatable": false
+				},
+				{
+					"slug": "featured",
+					"label": "Featured on the home page / Tampil di beranda",
+					"type": "boolean",
+					"translatable": false
+				}
+			]
+		},
+		{
+			"slug": "activities",
+			"label": "Activities",
+			"labelSingular": "Activity",
+			"description": "These entries appear on the public News page. Seeded articles are placeholders the secretariat can edit or replace.",
+			"urlPattern": "/news/{slug}",
+			"titleField": "title",
+			"dateField": "event_date",
+			"supports": [
+				"drafts",
+				"revisions",
+				"preview",
+				"search",
+				"seo"
+			],
+			"sortOrder": 2,
+			"fields": [
+				{
+					"slug": "title",
+					"label": "Title / Judul",
+					"type": "string",
+					"required": true,
+					"searchable": true
+				},
+				{
+					"slug": "excerpt",
+					"label": "Excerpt / Ringkasan",
+					"type": "text",
+					"searchable": true
+				},
+				{
+					"slug": "body",
+					"label": "Body / Isi",
+					"type": "portableText",
+					"searchable": true
+				},
+				{
+					"slug": "category",
+					"label": "Category / Kategori",
+					"type": "select",
+					"translatable": false,
+					"validation": {
+						"options": [
+							"Advocacy",
+							"Association"
+						]
+					}
+				},
+				{
+					"slug": "event_date",
+					"label": "Date / Tanggal",
+					"type": "datetime",
+					"translatable": false,
+					"indexed": true
+				},
+				{
+					"slug": "featured_image",
+					"label": "Photo / Foto",
+					"type": "image",
+					"translatable": false
+				}
+			]
+		}
+	],
+	"content": {
+		"members": [
+			{
+				"id": "member-nakula-dive-en",
+				"slug": "nakula-dive",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Nakula Dive",
+					"summary": "Nakula Dive stands in for a professional operator working between Bali and Komodo, with liveaboard passages and day diving from Labuan Bajo. The page is here to show how a member description, region, and services will read.",
+					"services": "Guided dives, liveaboard charters, and support for underwater photography.",
+					"regions": [
+						"Bali",
+						"Komodo"
+					],
+					"operation_type": "Liveaboard",
+					"featured": true,
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1559827260-dc66d52bef19.jpg",
+							"alt": "Shallow reef in clear water",
+							"filename": "photo-1559827260-dc66d52bef19.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-nakula-dive-id",
+				"slug": "nakula-dive",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-nakula-dive-en",
+				"data": {
+					"title": "Nakula Dive",
+					"summary": "Nakula Dive mewakili operator profesional yang bekerja antara Bali dan Komodo, dengan lintasan liveaboard dan selam harian dari Labuan Bajo. Halaman ini menunjukkan bagaimana deskripsi, wilayah, dan layanan anggota akan terbaca.",
+					"services": "Selam terpandu, charter liveaboard, dan dukungan fotografi bawah air.",
+					"regions": [
+						"Bali",
+						"Komodo"
+					],
+					"operation_type": "Liveaboard",
+					"featured": true,
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1559827260-dc66d52bef19.jpg",
+							"alt": "Terumbu dangkal di air jernih",
+							"filename": "photo-1559827260-dc66d52bef19.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-dewi-nusantara-en",
+				"slug": "dewi-nusantara",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Dewi Nusantara",
+					"summary": "Dewi Nusantara stands in for a luxury liveaboard crossing Raja Ampat, Komodo, and the Banda Sea. Guests live aboard and move between sites rather than returning to a resort each evening.",
+					"services": "Multi-region luxury liveaboard itineraries.",
+					"regions": [
+						"Raja Ampat",
+						"Komodo",
+						"Banda Sea"
+					],
+					"operation_type": "Liveaboard",
+					"featured": false,
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1544551763-46a013bb70d5.jpg",
+							"alt": "Diver swimming above a reef",
+							"filename": "photo-1544551763-46a013bb70d5.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-dewi-nusantara-id",
+				"slug": "dewi-nusantara",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-dewi-nusantara-en",
+				"data": {
+					"title": "Dewi Nusantara",
+					"summary": "Dewi Nusantara mewakili liveaboard mewah yang melintasi Raja Ampat, Komodo, dan Laut Banda. Tamu tinggal di kapal dan berpindah antar situs, bukan kembali ke resort setiap sore.",
+					"services": "Itinerari liveaboard mewah lintas wilayah.",
+					"regions": [
+						"Raja Ampat",
+						"Komodo",
+						"Banda Sea"
+					],
+					"operation_type": "Liveaboard",
+					"featured": false,
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1544551763-46a013bb70d5.jpg",
+							"alt": "Penyelam di atas terumbu",
+							"filename": "photo-1544551763-46a013bb70d5.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-scubaspa-zen-en",
+				"slug": "scubaspa-zen",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Scubaspa Zen",
+					"summary": "Scubaspa Zen stands in for a wellness liveaboard based in Raja Ampat, where the trip pairs diving with a quieter onboard routine.",
+					"services": "Raja Ampat liveaboard with a wellness program on board.",
+					"regions": [
+						"Raja Ampat"
+					],
+					"operation_type": "Liveaboard",
+					"featured": false,
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1682687220742-aba13b6e50ba.jpg",
+							"alt": "Deep blue water over a reef slope",
+							"filename": "photo-1682687220742-aba13b6e50ba.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-scubaspa-zen-id",
+				"slug": "scubaspa-zen",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-scubaspa-zen-en",
+				"data": {
+					"title": "Scubaspa Zen",
+					"summary": "Scubaspa Zen mewakili liveaboard kebugaran yang berbasis di Raja Ampat, dengan perjalanan yang memasangkan selam dan ritme di atas kapal yang lebih tenang.",
+					"services": "Liveaboard Raja Ampat dengan program kebugaran di atas kapal.",
+					"regions": [
+						"Raja Ampat"
+					],
+					"operation_type": "Liveaboard",
+					"featured": false,
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1682687220742-aba13b6e50ba.jpg",
+							"alt": "Air biru di lereng terumbu",
+							"filename": "photo-1682687220742-aba13b6e50ba.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-mikumba-diving-en",
+				"slug": "mikumba-diving",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Mikumba Diving",
+					"summary": "Mikumba Diving stands in for a liveaboard operator moving between Komodo and Raja Ampat.",
+					"services": "Liveaboard diving in Komodo and Raja Ampat.",
+					"regions": [
+						"Komodo",
+						"Raja Ampat"
+					],
+					"operation_type": "Liveaboard",
+					"featured": false,
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1546026423-cc4642628d2b.jpg",
+							"alt": "Coral heads in clear water",
+							"filename": "photo-1546026423-cc4642628d2b.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-mikumba-diving-id",
+				"slug": "mikumba-diving",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-mikumba-diving-en",
+				"data": {
+					"title": "Mikumba Diving",
+					"summary": "Mikumba Diving mewakili operator liveaboard yang berpindah antara Komodo dan Raja Ampat.",
+					"services": "Selam liveaboard di Komodo dan Raja Ampat.",
+					"regions": [
+						"Komodo",
+						"Raja Ampat"
+					],
+					"operation_type": "Liveaboard",
+					"featured": false,
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1546026423-cc4642628d2b.jpg",
+							"alt": "Kepala karang di air jernih",
+							"filename": "photo-1546026423-cc4642628d2b.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-indo-seamore-en",
+				"slug": "indo-seamore",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Indo Seamore",
+					"summary": "Indo Seamore stands in for a phinisi liveaboard working the waters of eastern Indonesia, outside a single famous park.",
+					"services": "Phinisi liveaboard charters in eastern Indonesia.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Liveaboard",
+					"featured": false,
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1507525428034-b723cf961d3e.jpg",
+							"alt": "Coastal water seen from shore",
+							"filename": "photo-1507525428034-b723cf961d3e.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-indo-seamore-id",
+				"slug": "indo-seamore",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-indo-seamore-en",
+				"data": {
+					"title": "Indo Seamore",
+					"summary": "Indo Seamore mewakili liveaboard phinisi yang beroperasi di perairan Indonesia timur, di luar satu taman yang sudah terkenal.",
+					"services": "Charter liveaboard phinisi di Indonesia timur.",
+					"regions": [
+						"Other regions"
+					],
+					"operation_type": "Liveaboard",
+					"featured": false,
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1507525428034-b723cf961d3e.jpg",
+							"alt": "Perairan pantai dilihat dari darat",
+							"filename": "photo-1507525428034-b723cf961d3e.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-cruising-indonesia-en",
+				"slug": "cruising-indonesia",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Cruising Indonesia",
+					"summary": "Cruising Indonesia stands in for a specialist that arranges liveaboard itineraries across more than one region, rather than running a single boat from one jetty.",
+					"services": "Liveaboard planning across several Indonesian regions.",
+					"regions": [
+						"Raja Ampat",
+						"Komodo",
+						"Banda Sea",
+						"Bali"
+					],
+					"operation_type": "Travel specialist",
+					"featured": false,
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1468581264429-2548ef9eb732.jpg",
+							"alt": "Sunlight on the sea surface",
+							"filename": "photo-1468581264429-2548ef9eb732.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-cruising-indonesia-id",
+				"slug": "cruising-indonesia",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-cruising-indonesia-en",
+				"data": {
+					"title": "Cruising Indonesia",
+					"summary": "Cruising Indonesia mewakili spesialis yang menyusun itinerari liveaboard di lebih dari satu wilayah, bukan mengoperasikan satu kapal dari satu dermaga.",
+					"services": "Perencanaan liveaboard di beberapa wilayah Indonesia.",
+					"regions": [
+						"Raja Ampat",
+						"Komodo",
+						"Banda Sea",
+						"Bali"
+					],
+					"operation_type": "Travel specialist",
+					"featured": false,
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1468581264429-2548ef9eb732.jpg",
+							"alt": "Cahaya matahari di permukaan laut",
+							"filename": "photo-1468581264429-2548ef9eb732.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-arenui-en",
+				"slug": "arenui",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Arenui",
+					"summary": "Arenui stands in for a boutique liveaboard in Raja Ampat, with a smaller guest list and a longer time on the reef.",
+					"services": "Boutique liveaboard diving in Raja Ampat.",
+					"regions": [
+						"Raja Ampat"
+					],
+					"operation_type": "Liveaboard",
+					"featured": false,
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1551244072-5d12893278ab.jpg",
+							"alt": "Sea turtle over coral",
+							"filename": "photo-1551244072-5d12893278ab.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-arenui-id",
+				"slug": "arenui",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-arenui-en",
+				"data": {
+					"title": "Arenui",
+					"summary": "Arenui mewakili liveaboard butik di Raja Ampat, dengan jumlah tamu yang lebih kecil dan waktu yang lebih panjang di terumbu.",
+					"services": "Selam liveaboard butik di Raja Ampat.",
+					"regions": [
+						"Raja Ampat"
+					],
+					"operation_type": "Liveaboard",
+					"featured": false,
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1551244072-5d12893278ab.jpg",
+							"alt": "Penyu di atas karang",
+							"filename": "photo-1551244072-5d12893278ab.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-your-company-en",
+				"slug": "your-company",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Your Company",
+					"summary": "Your Company is the open slot in the directory: a dive center or resort listing, ready for a member to replace with its own name, region, and photographs.",
+					"services": "Resort or dive-center operation. The details come from the member.",
+					"regions": [
+						"Bali"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1505118380757-91f5f5632de0.jpg",
+							"alt": "Open sea under a bright sky",
+							"filename": "photo-1505118380757-91f5f5632de0.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "member-your-company-id",
+				"slug": "your-company",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "member-your-company-en",
+				"data": {
+					"title": "Your Company",
+					"summary": "Your Company adalah tempat kosong di direktori: cantuman pusat selam atau resort, siap diganti anggota dengan nama, wilayah, dan fotonya sendiri.",
+					"services": "Operasi resort atau pusat selam. Rinciannya berasal dari anggota.",
+					"regions": [
+						"Bali"
+					],
+					"operation_type": "Dive resort or center",
+					"featured": false,
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1505118380757-91f5f5632de0.jpg",
+							"alt": "Laut lepas di bawah langit cerah",
+							"filename": "photo-1505118380757-91f5f5632de0.jpg"
+						}
+					}
+				}
+			}
+		],
+		"activities": [
+			{
+				"id": "activity-raja-ampat-open-letter-en",
+				"slug": "raja-ampat-open-letter",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Open letter: revoke nickel mining permits in Raja Ampat for good",
+					"excerpt": "On World Ocean Day, IDCA asked President Prabowo Subianto to revoke nickel mining permits across Raja Ampat, not merely pause them.",
+					"body": [
+						{
+							"_type": "block",
+							"_key": "p1",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "p1-s",
+									"text": "On World Ocean Day, 8 June 2025, IDCA wrote to President Prabowo Subianto. The letter asks for nickel mining permits across Raja Ampat to be revoked permanently, not suspended while the same activity remains possible."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "p2",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "p2-s",
+									"text": "Letter 001/EXT/IDCA/VI/2025 is signed by Chair Ebram Harimurti and Secretary General Rani Hernanda. It notes that more than 60 percent of Indonesia’s tourism appeal comes from nature, and treats Raja Ampat as both a national asset and a global conservation site. The letter cites at least 30,000 visitors in 2024, about 70 percent of them from abroad, contributing roughly Rp 150 billion a year in district revenue — before the wider local economy is counted."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "p3",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "p3-s",
+									"text": "The mines are not inside the core marine park. They sit in the buffer around Kawe and Wayag, and along routes used by marine life. Sediment from that work can still reach Wayag, block light to the reef, and disturb places such as the manta corridor at Eagle Rock. IDCA’s point is that a world-class dive site does not survive that kind of runoff, and that Indonesia’s reputation as a diving destination is tied to this one."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "q1",
+							"style": "blockquote",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "q1-s",
+									"text": "Extractive industry such as nickel mining is a contradiction in a place with this much ecological value."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "q1b",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "q1b-s",
+									"text": "— Ebram Harimurti, Chair"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "p4",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "p4-s",
+									"text": "The letter does not argue against nickel processing as a national strategy. It argues that not every coastline is a suitable place for it, and that Raja Ampat is one of the places that is not."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "h1",
+							"style": "h2",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "h1-s",
+									"text": "Four requests in the letter"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "d-0",
+							"style": "normal",
+							"listItem": "number",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "d-0-s",
+									"text": "Permanently revoke mining permits across Raja Ampat, then reorganize the area around its long-term ecological value."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "d-1",
+							"style": "normal",
+							"listItem": "number",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "d-1-s",
+									"text": "Expand no-take and buffer protection between Kawe and Wayag, and enforce conservation zoning that bars extractive industry."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "d-2",
+							"style": "normal",
+							"listItem": "number",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "d-2-s",
+									"text": "Support a green economy and community-based ecotourism as the long-term alternative."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "d-3",
+							"style": "normal",
+							"listItem": "number",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "d-3-s",
+									"text": "Involve Indigenous communities and local fishers in watching over and managing the area."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "p5",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "p5-s",
+									"text": "Press contact: Martin Wetik, public relations and inter-agency, +62 812 8119 7303. Secretariat: Jl. Tebet Timur Raya No. 2, Jakarta Selatan 12820."
+								}
+							]
+						}
+					],
+					"category": "Advocacy",
+					"event_date": "2025-06-08T00:00:00.000Z",
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1551244072-5d12893278ab.jpg",
+							"alt": "Sea turtle swimming over a coral reef",
+							"filename": "photo-1551244072-5d12893278ab.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "activity-raja-ampat-open-letter-id",
+				"slug": "raja-ampat-open-letter",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "activity-raja-ampat-open-letter-en",
+				"data": {
+					"title": "Surat terbuka: cabut izin tambang nikel di Raja Ampat secara permanen",
+					"excerpt": "Pada Hari Laut Sedunia, IDCA meminta Presiden Prabowo Subianto mencabut izin tambang nikel di seluruh Raja Ampat, bukan sekadar menundanya.",
+					"body": [
+						{
+							"_type": "block",
+							"_key": "p1",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "p1-s",
+									"text": "Pada Hari Laut Sedunia, 8 Juni 2025, IDCA menulis kepada Presiden Prabowo Subianto. Surat itu meminta izin tambang nikel di seluruh Raja Ampat dicabut secara permanen, bukan ditangguhkan sementara kegiatan yang sama tetap mungkin dilanjutkan."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "p2",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "p2-s",
+									"text": "Surat 001/EXT/IDCA/VI/2025 ditandatangani Ketua Umum Ebram Harimurti dan Sekretaris Jenderal Rani Hernanda. Surat itu mencatat bahwa lebih dari 60 persen daya tarik pariwisata Indonesia berasal dari alam, dan menempatkan Raja Ampat sebagai aset nasional sekaligus situs konservasi global. Surat mengutip sedikitnya 30.000 pengunjung pada 2024, sekitar 70 persen di antaranya dari luar negeri, dengan kontribusi sekitar Rp 150 miliar per tahun bagi pendapatan daerah — sebelum ekonomi lokal yang lebih luas dihitung."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "p3",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "p3-s",
+									"text": "Tambang itu tidak berada di inti kawasan konservasi perairan. Lokasinya di zona penyangga sekitar Kawe dan Wayag, serta di jalur yang dipakai satwa laut. Sedimen dari kegiatan itu tetap bisa mencapai Wayag, menghalangi cahaya ke terumbu, dan mengganggu tempat seperti koridor manta di Eagle Rock. Pendirian IDCA: situs selam kelas dunia tidak bertahan menghadapi limpasan semacam itu, dan reputasi Indonesia sebagai tujuan selam terkait erat dengan tempat ini."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "q1",
+							"style": "blockquote",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "q1-s",
+									"text": "Industri ekstraktif seperti tambang nikel adalah kontradiksi di tempat dengan nilai ekologis setinggi ini."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "q1b",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "q1b-s",
+									"text": "— Ebram Harimurti, Ketua Umum"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "p4",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "p4-s",
+									"text": "Surat ini tidak menolak pengolahan nikel sebagai strategi nasional. Yang ditolak adalah anggapan bahwa setiap pesisir cocok untuk itu. Raja Ampat adalah salah satu tempat yang tidak cocok."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "h1",
+							"style": "h2",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "h1-s",
+									"text": "Empat permintaan dalam surat"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "d-0",
+							"style": "normal",
+							"listItem": "number",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "d-0-s",
+									"text": "Mencabut izin tambang di seluruh Raja Ampat secara permanen, lalu menata ulang kawasan berdasarkan nilai ekologis jangka panjang."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "d-1",
+							"style": "normal",
+							"listItem": "number",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "d-1-s",
+									"text": "Memperluas zona larang ambil dan zona penyangga antara Kawe dan Wayag, serta menegakkan zonasi konservasi yang melarang kegiatan ekstraktif."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "d-2",
+							"style": "normal",
+							"listItem": "number",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "d-2-s",
+									"text": "Mendorong ekonomi hijau dan ekowisata berbasis masyarakat sebagai alternatif jangka panjang."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "d-3",
+							"style": "normal",
+							"listItem": "number",
+							"level": 1,
+							"children": [
+								{
+									"_type": "span",
+									"_key": "d-3-s",
+									"text": "Melibatkan masyarakat adat dan nelayan lokal dalam pengawasan dan pengelolaan kawasan."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "p5",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "p5-s",
+									"text": "Narahubung pers: Martin Wetik, humas dan antarlembaga, +62 812 8119 7303. Sekretariat: Jl. Tebet Timur Raya No. 2, Jakarta Selatan 12820."
+								}
+							]
+						}
+					],
+					"category": "Advocacy",
+					"event_date": "2025-06-08T00:00:00.000Z",
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1551244072-5d12893278ab.jpg",
+							"alt": "Penyu berenang di atas terumbu karang",
+							"filename": "photo-1551244072-5d12893278ab.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "activity-munas-iv-en",
+				"slug": "munas-iv",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Munas IV: the dive-operator association takes the name IDCA",
+					"excerpt": "Members elected Ebram Harimurti as chair for 2025–2030, retired the PUWSI acronym, and counted 77 companies still operating.",
+					"body": [
+						{
+							"_type": "block",
+							"_key": "p1",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "p1-s",
+									"text": "At its fourth national congress in Jakarta in February 2025, the association elected Ebram Harimurti as chair for 2025–2030. He succeeds Arief Yudo Wibowo."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "p2",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "p2-s",
+									"text": "The congress changed the public acronym from PUWSI — Perkumpulan Usaha Wisata Selam Indonesia — to IDCA, adopted a new logo, and updated the organization’s rules. The legal name of the association remains Perkumpulan Usaha Wisata Selam Indonesia."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "p3",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "p3-s",
+									"text": "Ebram told the congress that many dive operators had closed in the years after the pandemic, and that 77 member companies were still operating. He described the board’s job as making membership more useful, including help for companies completing the legal documents their businesses require, and working more closely with the ministries responsible for marine affairs and tourism."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "p4",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "p4-s",
+									"text": "The line he set for the term is a dive industry that can keep operating while holding the economic value of the trips and the condition of the sea in the same frame."
+								}
+							]
+						}
+					],
+					"category": "Association",
+					"event_date": "2025-02-15T00:00:00.000Z",
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1559827260-dc66d52bef19.jpg",
+							"alt": "Clear tropical water over a reef",
+							"filename": "photo-1559827260-dc66d52bef19.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "activity-munas-iv-id",
+				"slug": "munas-iv",
+				"status": "published",
+				"locale": "id",
+				"translationOf": "activity-munas-iv-en",
+				"data": {
+					"title": "Munas IV: asosiasi operator selam memakai nama IDCA",
+					"excerpt": "Anggota memilih Ebram Harimurti sebagai ketua umum untuk 2025–2030, menanggalkan singkatan PUWSI, dan mencatat 77 perusahaan yang masih beroperasi.",
+					"body": [
+						{
+							"_type": "block",
+							"_key": "p1",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "p1-s",
+									"text": "Pada Munas IV di Jakarta pada Februari 2025, asosiasi memilih Ebram Harimurti sebagai ketua umum untuk masa bakti 2025–2030. Ia menggantikan Arief Yudo Wibowo."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "p2",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "p2-s",
+									"text": "Munas mengubah singkatan publik dari PUWSI — Perkumpulan Usaha Wisata Selam Indonesia — menjadi IDCA, memakai logo baru, dan memperbarui aturan organisasi. Nama hukum asosiasi tetap Perkumpulan Usaha Wisata Selam Indonesia."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "p3",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "p3-s",
+									"text": "Ebram menyampaikan kepada munas bahwa banyak operator selam tutup pada tahun-tahun setelah pandemi, dan 77 perusahaan anggota masih beroperasi. Ia menggambarkan tugas pengurus sebagai membuat keanggotaan lebih berguna, termasuk membantu perusahaan melengkapi dokumen legalitas yang diperlukan usahanya, serta bekerja lebih dekat dengan kementerian yang mengurus kelautan dan pariwisata."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "p4",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "p4-s",
+									"text": "Arah yang ia tetapkan untuk masa bakti ini adalah industri selam yang tetap bisa berjalan, dengan nilai ekonomi perjalanan dan kondisi laut diletakkan dalam satu kerangka."
+								}
+							]
+						}
+					],
+					"category": "Association",
+					"event_date": "2025-02-15T00:00:00.000Z",
+					"featured_image": {
+						"$media": {
+							"file": "media/photo-1559827260-dc66d52bef19.jpg",
+							"alt": "Air tropis yang jernih di atas terumbu",
+							"filename": "photo-1559827260-dc66d52bef19.jpg"
+						}
+					}
+				}
+			}
+		]
+	}
+}

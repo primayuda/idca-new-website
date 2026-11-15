@@ -1,0 +1,140 @@
+---
+import { ui } from "../lib/copy";
+import { barePath, localePath, locales, type Locale } from "../lib/locale";
+import { whatsappHref } from "../lib/site";
+import Icons from "./Icons.astro";
+
+interface Props {
+	locale: Locale;
+}
+const { locale } = Astro.props;
+const c = ui(locale);
+const bare = barePath(Astro.url.pathname);
+const search = Astro.url.search;
+const links = [
+	["/about", c.nav.about],
+	["/members", c.nav.members],
+	["/news", c.nav.news],
+	["/membership", c.nav.membership],
+	["/contact", c.nav.contact],
+] as const;
+
+function active(href: string) {
+	return bare === href || bare.startsWith(`${href}/`);
+}
+---
+
+<header class="sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur-md">
+	<div class="mx-auto flex h-18 max-w-6xl items-center gap-3 px-5">
+		<a href={localePath(locale)} class="flex shrink-0 items-center pr-2" aria-label="IDCA — Indonesia Divetourism Company Association">
+			<img src="/brand/logo-mark.png" alt="" width="440" height="260" class="h-auto w-28" />
+		</a>
+		<nav class="ml-auto hidden items-center gap-1 lg:flex" aria-label="IDCA">
+			{
+				links.map(([href, label]) => (
+					<a
+						href={localePath(locale, href)}
+						aria-current={active(href) ? "page" : undefined}
+						class:list={[
+							"inline-flex min-h-11 items-center border-b-2 px-2.5 text-sm font-medium",
+							active(href) ? "border-reef text-ink" : "border-transparent text-muted hover:text-ink",
+						]}
+					>
+						{label}
+					</a>
+				))
+			}
+		</nav>
+		<div class="ml-auto flex items-center gap-2 lg:ml-3">
+			<a href={whatsappHref} aria-label={c.whatsapp} class="inline-flex h-11 w-11 items-center justify-center text-[#1fa855] lg:hidden">
+				<Icons name="whatsapp" />
+			</a>
+			<div class="hidden border border-line sm:flex" role="group" aria-label={c.language}>
+				{
+					locales.map((item) => (
+						<a
+							href={`${localePath(item, bare)}${search}`}
+							hreflang={item}
+							lang={item}
+							aria-current={item === locale ? "true" : undefined}
+							class:list={[
+								"inline-flex min-h-11 min-w-11 items-center justify-center text-xs font-semibold uppercase",
+								item === locale ? "bg-ink text-paper" : "text-ink hover:bg-foam",
+							]}
+						>
+							{item}
+						</a>
+					))
+				}
+			</div>
+			<a href={localePath(locale, "/login")} class="hidden min-h-11 items-center bg-reef px-3.5 text-sm font-semibold text-paper hover:bg-reef-bright lg:inline-flex">
+				{c.nav.login}
+			</a>
+			<button
+				type="button"
+				class="inline-flex h-11 w-11 items-center justify-center lg:hidden"
+				data-menu-button
+				data-open={c.openMenu}
+				data-close={c.closeMenu}
+				aria-expanded="false"
+				aria-controls="site-menu"
+			>
+				<span class="sr-only">{c.openMenu}</span>
+				<Icons name="menu" />
+			</button>
+		</div>
+	</div>
+	<div id="site-menu" class="hidden border-t border-line bg-paper lg:hidden" data-menu>
+		<nav class="mx-auto flex max-w-6xl flex-col px-5 py-2" aria-label="IDCA">
+			{
+				links.map(([href, label]) => (
+					<a
+						href={localePath(locale, href)}
+						aria-current={active(href) ? "page" : undefined}
+						class:list={["border-b border-line py-3 text-lg", active(href) ? "text-reef" : "text-ink"]}
+					>
+						{label}
+					</a>
+				))
+			}
+			<a href={localePath(locale, "/login")} class="mt-4 inline-flex min-h-11 items-center justify-center bg-reef px-4 font-semibold text-paper">
+				{c.nav.login}
+			</a>
+			<div class="my-4 flex border border-line" role="group" aria-label={c.language}>
+				{
+					locales.map((item) => (
+						<a
+							href={`${localePath(item, bare)}${search}`}
+							hreflang={item}
+							lang={item}
+							aria-current={item === locale ? "true" : undefined}
+							class:list={[
+								"inline-flex min-h-11 flex-1 items-center justify-center text-sm font-semibold uppercase",
+								item === locale ? "bg-ink text-paper" : "text-ink",
+							]}
+						>
+							{item}
+						</a>
+					))
+				}
+			</div>
+		</nav>
+	</div>
+</header>
+
+<script>
+	const button = document.querySelector<HTMLButtonElement>("[data-menu-button]");
+	const menu = document.querySelector<HTMLElement>("[data-menu]");
+	const label = button?.querySelector(".sr-only");
+	const openText = button?.dataset.open ?? "Open menu";
+	const closeText = button?.dataset.close ?? "Close menu";
+	function setOpen(open: boolean) {
+		menu?.classList.toggle("hidden", !open);
+		button?.setAttribute("aria-expanded", String(open));
+		if (label) label.textContent = open ? closeText : openText;
+	}
+	button?.addEventListener("click", () => setOpen(button.getAttribute("aria-expanded") !== "true"));
+	document.addEventListener("keydown", (event) => {
+		if (event.key === "Escape") setOpen(false);
+	});
+</script>

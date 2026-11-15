@@ -1,0 +1,49 @@
+---
+import { getEmDashCollection } from "emdash";
+import { Image } from "emdash/ui";
+import PageHeader from "../components/PageHeader.astro";
+import Base from "../layouts/Base.astro";
+import { ui } from "../lib/copy";
+import { img, str } from "../lib/fields";
+import { formatDate, labelFor, localePath, type Locale } from "../lib/locale";
+
+interface Props {
+	locale: Locale;
+}
+const { locale } = Astro.props;
+const c = ui(locale);
+const { entries } = await getEmDashCollection("activities", {
+	locale,
+	orderBy: { event_date: "desc" },
+});
+---
+
+<Base locale={locale} title={c.news.title} description={c.news.lede}>
+	<PageHeader eyebrow={c.nav.news} title={c.news.title} lede={c.news.lede} />
+	<div class="mx-auto max-w-6xl px-5 py-12">
+		{
+			entries.length === 0 ? (
+				<p class="text-muted">{c.newsHome.empty}</p>
+			) : (
+				<ul class="divide-y divide-line border-y border-line">
+					{entries.map((article) => (
+						<li>
+							<a href={localePath(locale, `/news/${article.data.slug}`)} class="group grid gap-5 py-6 sm:grid-cols-[180px_minmax(0,1fr)] sm:items-center">
+								<span class="relative block aspect-[16/10] overflow-hidden bg-foam">
+									{img(article.data.featured_image) && <Image image={img(article.data.featured_image)} alt="" class="h-full w-full object-cover" />}
+								</span>
+								<span>
+									<span class="text-xs font-semibold uppercase tracking-[0.14em] text-reef">
+										{labelFor(locale, str(article.data.category), "category")} · {formatDate(locale, article.data.event_date)}
+									</span>
+									<span class="mt-2 block font-display text-3xl leading-tight group-hover:text-reef">{article.data.title}</span>
+									<span class="mt-2 block max-w-2xl leading-relaxed text-muted">{article.data.excerpt}</span>
+								</span>
+							</a>
+						</li>
+					))}
+				</ul>
+			)
+		}
+	</div>
+</Base>

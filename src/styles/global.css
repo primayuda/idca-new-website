@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme inline {
+	--font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+	--font-display: "Fraunces", Georgia, "Times New Roman", serif;
+	--color-ink: #10242c;
+	--color-sea: #0b2c38;
+	--color-foam: #f4efe6;
+	--color-paper: #fbf8f3;
+	--color-sand: #e6dccb;
+	--color-reef: #0c5e58;
+	--color-reef-bright: #11786f;
+	--color-muted: #3e525a;
+	--color-line: #ddd4c6;
+	--color-danger: #8f2d2d;
+	--color-flag: #c4322f;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+	font-family: var(--font-sans);
+	background: var(--color-paper);
+	color: var(--color-ink);
+	text-rendering: optimizeLegibility;
+}
+
+::selection {
+	background: #0c5e58;
+	color: #fbf8f3;
+}
+
+:focus-visible {
+	outline: 2px solid #fbf8f3;
+	outline-offset: 2px;
+	box-shadow: 0 0 0 4px #10242c;
+}
+
+.emdash-image,
+.emdash-image-media,
+.emdash-image img,
+.emdash-image picture {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.emdash-image img {
+	object-fit: cover;
+}
+
+.article-body > * + * {
+	margin-top: 1.25rem;
+}
+
+.article-body h2 {
+	font-family: var(--font-display);
+	font-size: 1.75rem;
+	line-height: 1.2;
+}
+
+.article-body blockquote {
+	border-left: 3px solid #0c5e58;
+	padding-left: 1rem;
+	font-family: var(--font-display);
+	font-size: 1.5rem;
+	line-height: 1.3;
+}
+
+.article-body ol {
+	list-style: decimal;
+	padding-left: 1.25rem;
+}
+
+.article-body li + li {
+	margin-top: 0.5rem;
+}

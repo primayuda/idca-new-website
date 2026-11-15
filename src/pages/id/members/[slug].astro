@@ -1,0 +1,10 @@
+---
+import { getEmDashEntry } from "emdash";
+import Member from "../../../views/Member.astro";
+
+const slug = Astro.params.slug;
+const { entry } = slug ? await getEmDashEntry("members", slug, { locale: "id" }) : { entry: null };
+if (!entry) return Astro.rewrite("/id/404");
+---
+
+<Member locale="id" entry={entry} />

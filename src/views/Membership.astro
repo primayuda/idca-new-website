@@ -1,0 +1,68 @@
+---
+import MailForm from "../components/MailForm.astro";
+import PageHeader from "../components/PageHeader.astro";
+import Base from "../layouts/Base.astro";
+import { ui } from "../lib/copy";
+import { labelFor, regionOptions, typeOptions, type Locale } from "../lib/locale";
+
+interface Props {
+	locale: Locale;
+}
+const { locale } = Astro.props;
+const c = ui(locale);
+const m = c.membership;
+const field = "w-full min-h-11 border border-line bg-paper px-3 text-base";
+---
+
+<Base locale={locale} title={m.title} description={m.lede}>
+	<PageHeader eyebrow={c.nav.membership} title={m.title} lede={m.lede} />
+	<div class="mx-auto grid max-w-6xl gap-12 px-5 py-14 lg:grid-cols-2">
+		<section>
+			<h2 class="font-display text-3xl">{m.privilegesTitle}</h2>
+			<ul class="mt-6 space-y-5">
+				{
+					m.privileges.map(([title, body]) => (
+						<li>
+							<h3 class="font-display text-2xl">{title}</h3>
+							<p class="mt-1 leading-relaxed text-muted">{body}</p>
+						</li>
+					))
+				}
+			</ul>
+		</section>
+		<section class="border border-line bg-foam p-5 sm:p-6">
+			<h2 class="font-display text-3xl">{m.formTitle}</h2>
+			<p class="mt-2 text-sm leading-relaxed text-muted">{m.formLede}</p>
+			<div class="mt-6">
+				<MailForm subject={locale === "id" ? "Pendaftaran anggota IDCA" : "IDCA membership application"} status={m.status} submit={m.submit} required={m.required} emailInvalid={m.emailInvalid}>
+					<label class="block text-sm font-medium" for="company">{m.company}</label>
+					<input id="company" name={m.company} required class={field} />
+					<p class="text-sm text-danger" data-error-for="company"></p>
+					<label class="block text-sm font-medium" for="contact">{m.contact}</label>
+					<input id="contact" name={m.contact} required class={field} />
+					<p class="text-sm text-danger" data-error-for="contact"></p>
+					<label class="block text-sm font-medium" for="email">{m.email}</label>
+					<input id="email" name={m.email} type="email" required autocomplete="email" class={field} />
+					<p class="text-sm text-danger" data-error-for="email"></p>
+					<label class="block text-sm font-medium" for="phone">{m.phone}</label>
+					<input id="phone" name={m.phone} required class={field} />
+					<p class="text-sm text-danger" data-error-for="phone"></p>
+					<label class="block text-sm font-medium" for="region">{m.region}</label>
+					<select id="region" name={m.region} required class={field}>
+						<option value="">{m.choose}</option>
+						{regionOptions.map((region) => <option value={labelFor(locale, region, "region")}>{labelFor(locale, region, "region")}</option>)}
+					</select>
+					<p class="text-sm text-danger" data-error-for="region"></p>
+					<label class="block text-sm font-medium" for="type">{m.type}</label>
+					<select id="type" name={m.type} required class={field}>
+						<option value="">{m.choose}</option>
+						{typeOptions.map((type) => <option value={labelFor(locale, type, "type")}>{labelFor(locale, type, "type")}</option>)}
+					</select>
+					<p class="text-sm text-danger" data-error-for="type"></p>
+					<label class="block text-sm font-medium" for="message">{m.message}</label>
+					<textarea id="message" name={m.message} rows="4" class={`${field} min-h-28 py-2`}></textarea>
+				</MailForm>
+			</div>
+		</section>
+	</div>
+</Base>

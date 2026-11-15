@@ -1,0 +1,62 @@
+---
+import { ui } from "../lib/copy";
+import { localePath, type Locale } from "../lib/locale";
+import { site, whatsappHref } from "../lib/site";
+
+interface Props {
+	locale: Locale;
+}
+const { locale } = Astro.props;
+const c = ui(locale);
+const links = [
+	["/about", c.nav.about],
+	["/members", c.nav.members],
+	["/news", c.nav.news],
+	["/membership", c.nav.membership],
+	["/contact", c.nav.contact],
+	["/privacy", c.footer.privacy],
+] as const;
+---
+
+<footer class="bg-sea text-paper">
+	<div class="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr]">
+		<div>
+			<a href={localePath(locale)} class="inline-block bg-foam p-2">
+				<img src="/brand/logo.jpg" alt="IDCA — Indonesia Divetourism Company Association" width="160" height="160" class="h-28 w-28 object-cover" />
+			</a>
+			<p class="mt-5 max-w-sm text-sm leading-relaxed text-sand">{c.footer.blurb}</p>
+		</div>
+		<div>
+			<h2 class="text-xs font-semibold uppercase tracking-[0.16em] text-sand">{c.footer.visit}</h2>
+			<ul class="mt-4 space-y-2">
+				{
+					links.map(([href, label]) => (
+						<li>
+							<a href={localePath(locale, href)} class="inline-flex min-h-11 items-center text-sm hover:text-sand">
+								{label}
+							</a>
+						</li>
+					))
+				}
+				<li>
+					<a href="/_emdash/admin" class="inline-flex min-h-11 items-center text-sm hover:text-sand">{c.footer.editor}</a>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<h2 class="text-xs font-semibold uppercase tracking-[0.16em] text-sand">{c.footer.secretariat}</h2>
+			<address class="mt-4 space-y-3 text-sm not-italic leading-relaxed">
+				<p>{site.street}<br />{site.locality}</p>
+				<p><a class="underline decoration-sand/60 underline-offset-4" href={`mailto:${site.email}`}>{site.email}</a></p>
+				<p><a class="underline decoration-sand/60 underline-offset-4" href={whatsappHref}>{site.whatsappDisplay}</a></p>
+				<p>
+					{c.footer.press}: {site.pressName}<br />
+					<a class="underline decoration-sand/60 underline-offset-4" href="tel:+6281281197303">{site.pressPhone}</a>
+				</p>
+			</address>
+		</div>
+	</div>
+	<div class="border-t border-white/10">
+		<p class="mx-auto max-w-6xl px-5 py-5 text-xs text-sand">{c.footer.rights}</p>
+	</div>
+</footer>

@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Icons from "../components/Icons.astro";
+import { ui } from "../lib/copy";
+import type { Locale } from "../lib/locale";
+import { whatsappHref } from "../lib/site";
+
+interface Props {
+	locale: Locale;
+	title: string;
+	description?: string;
+}
+const { locale, title, description } = Astro.props;
+const c = ui(locale);
+const fullTitle = title.startsWith("IDCA") ? title : `${title} — IDCA`;
+---
+
+<!doctype html>
+<html lang={locale}>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{fullTitle}</title>
+		{description && <meta name="description" content={description} />}
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+	</head>
+	<body class="min-h-screen bg-paper font-sans text-ink antialiased">
+		<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:bg-paper focus:px-4 focus:py-2">
+			{c.skip}
+		</a>
+		<Header locale={locale} />
+		<main id="main">
+			<slot />
+		</main>
+		<Footer locale={locale} />
+		<a href={whatsappHref} aria-label={c.whatsapp} class="fixed right-5 bottom-5 z-30 hidden min-h-11 items-center gap-2 bg-[#1fa855] px-4 text-sm font-semibold text-white hover:bg-[#188a46] lg:inline-flex">
+			<Icons name="whatsapp" class="h-5 w-5" />
+			<span aria-hidden="true">WhatsApp</span>
+		</a>
+	</body>
+</html>

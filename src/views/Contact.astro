@@ -1,0 +1,61 @@
+---
+import MailForm from "../components/MailForm.astro";
+import PageHeader from "../components/PageHeader.astro";
+import Base from "../layouts/Base.astro";
+import { ui } from "../lib/copy";
+import { site, whatsappHref } from "../lib/site";
+import type { Locale } from "../lib/locale";
+
+interface Props {
+	locale: Locale;
+}
+const { locale } = Astro.props;
+const c = ui(locale);
+const field = "w-full min-h-11 border border-line bg-paper px-3 text-base";
+---
+
+<Base locale={locale} title={c.contact.title} description={c.contact.lede}>
+	<PageHeader eyebrow={c.nav.contact} title={c.contact.title} lede={c.contact.lede} />
+	<div class="mx-auto grid max-w-6xl gap-12 px-5 py-14 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
+		<address class="space-y-5 not-italic">
+			<div>
+				<h2 class="text-xs font-semibold uppercase tracking-[0.16em] text-reef">{c.contact.address}</h2>
+				<p class="mt-2">{site.street}<br />{site.locality}</p>
+			</div>
+			<div>
+				<h2 class="text-xs font-semibold uppercase tracking-[0.16em] text-reef">{c.contact.email}</h2>
+				<p class="mt-2"><a class="underline underline-offset-4" href={`mailto:${site.email}`}>{site.email}</a></p>
+			</div>
+			<div>
+				<h2 class="text-xs font-semibold uppercase tracking-[0.16em] text-reef">{c.contact.whatsapp}</h2>
+				<p class="mt-2"><a class="underline underline-offset-4" href={whatsappHref}>{site.whatsappDisplay}</a></p>
+			</div>
+			<div>
+				<h2 class="text-xs font-semibold uppercase tracking-[0.16em] text-reef">{c.contact.press}</h2>
+				<p class="mt-2">{site.pressName}<br /><a class="underline underline-offset-4" href="tel:+6281281197303">{site.pressPhone}</a></p>
+			</div>
+		</address>
+		<section class="border border-line bg-foam p-5 sm:p-6">
+			<h2 class="font-display text-3xl">{c.contact.formTitle}</h2>
+			<div class="mt-6">
+				<MailForm subject={locale === "id" ? "Pesan untuk sekretariat IDCA" : "Message for the IDCA secretariat"} status={c.contact.status} submit={c.contact.submit} required={c.contact.required} emailInvalid={c.contact.emailInvalid}>
+					<label class="block text-sm font-medium" for="name">{c.contact.name}</label>
+					<input id="name" name={c.contact.name} required class={field} />
+					<p class="text-sm text-danger" data-error-for="name"></p>
+					<label class="block text-sm font-medium" for="email">{c.contact.email}</label>
+					<input id="email" name={c.contact.email} type="email" required autocomplete="email" class={field} />
+					<p class="text-sm text-danger" data-error-for="email"></p>
+					<label class="block text-sm font-medium" for="topic">{c.contact.topic}</label>
+					<select id="topic" name={c.contact.topic} required class={field}>
+						<option value="">{c.membership.choose}</option>
+						{c.contact.topics.map((topic) => <option value={topic}>{topic}</option>)}
+					</select>
+					<p class="text-sm text-danger" data-error-for="topic"></p>
+					<label class="block text-sm font-medium" for="message">{c.contact.message}</label>
+					<textarea id="message" name={c.contact.message} required rows="5" class={`${field} min-h-32 py-2`}></textarea>
+					<p class="text-sm text-danger" data-error-for="message"></p>
+				</MailForm>
+			</div>
+		</section>
+	</div>
+</Base>

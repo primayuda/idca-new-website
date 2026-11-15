@@ -1,0 +1,10 @@
+---
+import NotFound from "../views/NotFound.astro";
+import { isLocale } from "../lib/locale";
+
+const first = Astro.url.pathname.split("/").filter(Boolean)[0];
+const locale = isLocale(first) ? first : "en";
+Astro.response.status = 404;
+---
+
+<NotFound locale={locale} />
