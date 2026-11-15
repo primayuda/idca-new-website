@@ -74,3 +74,4 @@ Membership and contact forms do not store submissions. They open the visitor's e
 
 - `.env`, `data.db`, `uploads/`, `dist/`, and `node_modules/` are local and git-ignored.
 - The `mockup/` folder holds the original static design files for reference only and is git-ignored.
+- The shadcn CLI is not installed as a dependency. Add new components with `npx shadcn@latest add <component>`. Its base CSS is kept in `src/styles/shadcn.css`.
