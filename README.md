@@ -64,7 +64,7 @@ Pushes to `main` build the site and deploy it to https://idca.primayuda.dev thro
 The workflow needs two repository secrets:
 
 - `CLOUDFLARE_API_TOKEN`: a token created from the **Edit Cloudflare Workers** template, scoped to this account and the `primayuda.dev` zone
-- `CLOUDFLARE_ACCOUNT_ID`: `b52da01e364b9fa39cb2de0df31532a2`
+- `CLOUDFLARE_ACCOUNT_ID`: the account ID from the Cloudflare dashboard overview
 
 The Worker is `idca-website` and uses the D1 database `idca-website`, the R2 bucket `idca-media`, a KV session store, and a scheduled task every minute that publishes scheduled items. Its `workers.dev` address is turned off, so the site is reachable only at the custom domain.
 
