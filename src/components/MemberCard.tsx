@@ -21,7 +21,7 @@ export function MemberCard({
 		<a href={href} className="group block h-full">
 			<Card className="h-full gap-0 py-0">
 				{imageSrc ? (
-					<img src={imageSrc} alt={imageAlt ?? ""} className="aspect-[16/10] w-full object-cover" />
+					<img src={imageSrc} alt={imageAlt ?? ""} className="aspect-[16/10] w-full bg-card object-contain" />
 				) : (
 					<div className="aspect-[16/10] bg-muted" />
 				)}
